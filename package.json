@@ -26,9 +26,7 @@
     "root": true,
     "extends": "eslint:recommended",
     "globals": {
-      "wp": true,
-      "app": true,
-      "tinymce": true
+      "app": true
     },
     "env": {
       "node": true,
