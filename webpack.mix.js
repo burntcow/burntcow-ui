@@ -37,7 +37,7 @@ mix.webpackConfig({
       test: /\.(jpe?g|png|gif|svg)$/i
     }),
     
-    new PrettierPlugin()
+    // new PrettierPlugin()
   ]
 });
 

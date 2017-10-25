@@ -1,3 +1,100 @@
 /*------------------------------------*\
   #MIXINS
 \*------------------------------------*/
+
+// Block 
+@mixin block() {
+  &:not(:last-child) {
+    margin-bottom: 1.5rem
+  }
+}
+
+// Arrow 
+@mixin arrow($color) {
+  border: 1px solid $color;
+  border-right: 0;
+  border-top: 0;
+  content: ' ';
+  display: block;
+  height: 0.5em;
+  pointer-events: none;
+  position: absolute;
+  transform: rotate(-45deg);
+  width: 0.5em;
+}
+
+// Clearfix
+@mixin clearfix() {
+  &::after {
+    clear: both;
+    content: ' ';
+    display: table;
+  }
+}
+
+// Responsive
+@mixin from($device) {
+  @media screen and (min-width: $device) {
+    @content; 
+  }
+}
+
+@mixin until($device) {
+  @media screen and (max-width: $device - 1px) {
+    @content;
+  }
+}
+
+@mixin mobile() {
+  @media screen and (max-width: $tablet - 1px) {
+    @content;
+  }
+}
+
+@mixin tablet() {
+  @media screen and (min-width: $tablet), print {
+    @content;
+  }
+}
+
+@mixin tablet-only() {
+  @media screen and (min-width: $tablet) and (max-width: $desktop - 1px) {
+    @content;
+  }
+}
+
+@mixin touch() {
+  @media screen and (max-width: $desktop - 1px) {
+    @content;
+  }
+}
+
+@mixin desktop() {
+  @media screen and (min-width: $desktop) {
+    @content;
+  }
+}
+
+@mixin desktop-only() {
+  @media screen and (min-width: $desktop) and (max-width: $widescreen - 1px) {
+    @content;
+  }
+}
+
+@mixin widescreen() {
+  @media screen and (min-width: $widescreen) {
+    @content;
+  }
+}
+
+@mixin widescreen-only() {
+  @media screen and (min-width: $widescreen) and (max-width: $fullhd - 1px) {
+    @content;
+  }
+}
+
+@mixin fullhd() {
+  @media screen and (min-width: $fullhd) {
+    @content;
+  }
+}

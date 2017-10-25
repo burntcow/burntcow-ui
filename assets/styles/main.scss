@@ -1,13 +1,28 @@
 // Configuration 
-@import "config/functions";
-@import "config/mixins";
-@import "config/variables";
-@import "config/external";
-@import "config/*";
+@import 'config/functions';
+@import 'config/mixins';
+@import 'config/variables';
+@import 'config/external';
 
-// Styles 
-@import "common/*";
-@import "elements/*";
-@import "components/*";
-@import "grid/*";
-@import "layout/*";
+// Common
+@import 'common/global';
+@import 'common/reset';
+
+// Elements 
+@import 'elements/icon';
+@import 'elements/notification';
+@import 'elements/table';
+
+// Components
+@import 'components/accordion';
+@import 'components/card';
+@import 'components/navbar';
+@import 'components/tabs';
+
+// Grid
+@import 'grid/container';
+@import 'grid/grid';
+
+// Layout
+@import 'layout/footer';
+@import 'layout/header';

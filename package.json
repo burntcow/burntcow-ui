@@ -72,25 +72,27 @@
     "extends": "stylelint-config-standard"
   },
   "scripts": {
-    "build": "NODE_ENV=development webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "build": "cross-env NODE_ENV=development webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "build:production": "npm run -s clean && NODE_ENV=production webpack --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "start": "NODE_ENV=development webpack --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "start": "cross-env NODE_ENV=development webpack --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "clean": "npm run -s clean:dist",
     "clean:dist": "rimraf dist",
     "lint": "npm run -s lint:scripts && npm run -s lint:styles",
-    "lint:scripts": "",
-    "lint:styles": "stylelint 'resources/assets/styles/**/*.{css,sass,scss,styl,less}'",
+    "lint:scripts": "eslint assets/scripts",
+    "lint:styles": "stylelint 'assets/styles/**/*.{css,sass,scss,styl,less}'",
     "test": "npm run -s lint"
   },
   "engines": {
     "node": ">= 6.9.4"
   },
   "devDependencies": {
+    "cross-env": "^5.1.0",
     "eslint": "^4.7.1",
     "eslint-loader": "^1.9.0",
     "eslint-plugin-import": "^2.7.0",
     "imagemin-webpack-plugin": "^1.5.2",
     "laravel-mix": "^1.4.5",
+    "prettier-webpack-plugin": "^0.2.2",
     "rimraf": "^2.6.2",
     "stylelint": "^8.1.1",
     "stylelint-config-standard": "^17.0.0",
@@ -99,6 +101,7 @@
   },
   "dependencies": {
     "micromodal": "^0.1.1",
-    "microtip": "^0.2.2"
+    "microtip": "^0.2.2",
+    "minireset.css": "^0.0.3"
   }
 }
