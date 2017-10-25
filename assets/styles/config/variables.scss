@@ -80,14 +80,17 @@ $danger-invert: $red-invert !default;
 $light-invert: $dark !default;
 $dark-invert: $light !default;
 
+// Body
 $background: $white-ter !default;
 $border: $grey-lighter !default;
 
+// Typography Colors
 $text: $grey-dark !default;
 $text-invert: findColorInvert($text) !default;
 $text-light: $grey !default;
 $text-strong: $grey-darker !default;
 
+// Links
 $link: $blue !default;
 $link-invert: $blue-invert !default;
 $link-visited: $purple !default;
@@ -101,11 +104,7 @@ $link-focus-border: $blue !default;
 $link-active: $grey-darker !default;
 $link-active-border: $grey-dark !default;
 
-// Color Map
-$colors: ("white": ($white, $black), "black": ($black, $white), "light": ($light, $light-invert), "dark": ($dark, $dark-invert), "primary": ($primary, $primary-invert), "link": ($link, $link-invert), "info": ($info, $info-invert), "success": ($success, $success-invert), "warning": ($warning, $warning-invert), "danger": ($danger, $danger-invert)) !default
-$shades: ("black-bis": $black-bis, "black-ter": $black-ter, "grey-darker": $grey-darker, "grey-dark": $grey-dark, "grey": $grey, "grey-light": $grey-light, "grey-lighter": $grey-lighter, "white-ter": $white-ter, "white-bis": $white-bis) !default
-
-// Typography
+// Typography Sizes
 $size-1: 3rem !default;
 $size-2: 2.5rem !default;
 $size-3: 2rem !default;
@@ -125,9 +124,6 @@ $weight-medium: 500 !default;
 $weight-semibold: 600 !default;
 $weight-bold: 700 !default;
 
-$body-size: 16px !default;
-$render-mode: optimizeLegibility !default;
-
 // Font Stacks
 $family-sans-serif: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
 $family-monospace: monospace !default;
@@ -135,12 +131,26 @@ $family-proxima-nova: "Proxima Nova", "Helvetica Neue", "Helvetica", "Arial", sa
 $family-gotham: "GothamBody", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
 $family-gotham-display: "GothamDisplay", "Helvetica Neue", "Helvetica", "Arial", sans-serif !default;
 
-// Grid 
+// Code / Pre
+$code: $red !default;
+$code-background: $background !default;
+
+$pre: $text !default;
+$pre-background: $background !default;
+
+// Grid
 $gap: 32px !default;
 $tablet: 769px !default;
 $desktop: 960px + (2 * $gap) !default;
 $widescreen: 1152px + (2 * $gap) !default;
 $fullhd: 1344px + (2 * $gap) !default;
+
+// Scaffolding
+$body-size: 16px !default;
+
+$family-primary: $family-sans-serif !default;
+$family-code: $family-monospace !default;
+$render-mode: optimizeLegibility !default;
 
 // Miscellaneous
 $easing:       ease-out !default;
@@ -148,3 +158,31 @@ $radius-small: 2px      !default;
 $radius:       3px      !default;
 $radius-large: 5px      !default;
 $speed:        86ms     !default;
+
+// Maps
+$colors: (
+  "white": ($white, $black),
+  "black": ($black, $white),
+  "light": ($light, $light-invert),
+  "dark": ($dark, $dark-invert),
+  "primary": ($primary, $primary-invert),
+  "link": ($link, $link-invert),
+  "info": ($info, $info-invert),
+  "success": ($success, $success-invert),
+  "warning": ($warning, $warning-invert),
+  "danger": ($danger, $danger-invert)
+) !default;
+
+$shades: (
+  "black-bis": $black-bis,
+  "black-ter": $black-ter,
+  "grey-darker": $grey-darker,
+  "grey-dark": $grey-dark,
+  "grey": $grey,
+  "grey-light": $grey-light,
+  "grey-lighter": $grey-lighter,
+  "white-ter": $white-ter,
+  "white-bis": $white-bis
+) !default;
+
+$sizes: $size-1 $size-2 $size-3 $size-4 $size-5 $size-6 $size-7 !default;

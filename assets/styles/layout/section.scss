@@ -1,0 +1,25 @@
+/*------------------------------------*\
+  #SECTION
+\*------------------------------------*/
+
+$section-padding: 3rem 1.5rem !default;
+$section-padding-small: 1.5rem 1.5rem !default;
+$section-padding-medium: 9rem 1.5rem !default;
+$section-padding-large: 18rem 1.5rem !default;
+
+.section {
+  padding: $section-padding;
+  // Responsiveness
+  @include desktop() {
+    // Sizes
+    &__small {
+      padding: $section-padding-small;
+    }
+    &__medium {
+      padding: $section-padding-medium;
+    }
+    &__large {
+      padding: $section-padding-large;
+    }
+  }
+}
