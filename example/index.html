@@ -13,9 +13,15 @@
         <div class="navbar">
           <div class="container">
             <div class="navbar--brand">
-              <p class="h1">
+              <a class="navbar-item" href="/">
                 Burntcow UI
-              </p>
+              </a>
+
+              <button class="button navbar--burger">
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
             </div>
 
             <div class="navbar--menu">
@@ -27,7 +33,16 @@
                   <a href="#">Blog</a>
                 </li>
                 <li class="navbar--item">
-                  <a href="#">Documentation</a>
+                  <a class="navbar--link" href="#">Documentation</a>
+
+                  <ul class="navbar--dropdown navbar--menu">
+                    <li class="navbar-item">
+                      <a href="#">Lorem</a>
+                    </li>
+                    <li class="navbar-item">
+                      <a href="#">Ipsum</a>
+                    </li>
+                  </ul>
                 </li>
               </ul>
 

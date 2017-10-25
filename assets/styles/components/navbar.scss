@@ -306,7 +306,7 @@ $navbar-divider-background-color: $border !default;
     }
   }
 
-  .navbar-link {
+  .navbar--link {
     &::after {
       @include arrow($navbar-dropdown-arrow);
       margin-top: -0.375em;
@@ -386,7 +386,7 @@ $navbar-divider-background-color: $border !default;
   .navbar--item.has-dropdown {
     &:hover,
     &.is-active {
-      .navbar-link {
+      .navbar--link {
         background-color: $navbar-item-hover-background-color;
       }
     }
