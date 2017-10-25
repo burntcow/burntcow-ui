@@ -2,14 +2,14 @@
   #MIXINS
 \*------------------------------------*/
 
-// Block 
+// Block
 @mixin block() {
   &:not(:last-child) {
     margin-bottom: 1.5rem
   }
 }
 
-// Arrow 
+// Arrow
 @mixin arrow($color) {
   border: 1px solid $color;
   border-right: 0;
@@ -23,6 +23,16 @@
   width: 0.5em;
 }
 
+// Placeholder
+@mixin placeholder() {
+  $placeholders: ':-moz' ':-webkit-input' '-moz' '-ms-input';
+  @each $placeholder in $placeholders {
+    &:#{$placeholder}-placeholder {
+      @content;
+    }
+  }
+}
+
 // Clearfix
 @mixin clearfix() {
   &::after {
@@ -32,10 +42,77 @@
   }
 }
 
+// Overflow Touch
+@mixin overflow-touch() {
+  -webkit-overflow-scrolling: touch;
+}
+
+// Center
+@mixin center($width, $height: 0) {
+  position: absolute;
+  @if $height != 0 {
+    left: calc(50% - (#{$width} / 2));
+    top: calc(50% - (#{$height} / 2));
+  } @else {
+    left: calc(50% - (#{$width} / 2));
+    top: calc(50% - (#{$width} / 2));
+  }
+}
+
+// Hamburger
+@mixin hamburger($dimensions) {
+  cursor: pointer;
+  display: block;
+  height: $dimensions;
+  position: relative;
+  width: $dimensions;
+  span {
+    background-color: currentColor;
+    display: block;
+    height: 1px;
+    left: calc(50% - 8px);
+    position: absolute;
+    transform-origin: center;
+    transition-duration: $speed;
+    transition-property: background-color, opacity, transform;
+    transition-timing-function: $easing;
+    width: 16px;
+
+    &:nth-child(1) {
+      top: calc(50% - 6px);
+    }
+    &:nth-child(2) {
+      top: calc(50% - 1px);
+    }
+    &:nth-child(3) {
+      top: calc(50% + 4px);
+    }
+  }
+
+  &:hover {
+    background-color: rgba(black, 0.05);
+  }
+
+  // States
+  &.is-active {
+    span {
+      &:nth-child(1) {
+        transform: translateY(5px) rotate(45deg);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      &:nth-child(3) {
+        transform: translateY(-5px) rotate(-45deg);
+      }
+    }
+  }
+}
+
 // Responsive
 @mixin from($device) {
   @media screen and (min-width: $device) {
-    @content; 
+    @content;
   }
 }
 

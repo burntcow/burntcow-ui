@@ -3,5 +3,10 @@
 \*------------------------------------*/
 
 .header {
+  position: relative;
   
+  &__fixed {
+    position: fixed;
+    top: 0;
+  }
 }

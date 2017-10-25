@@ -1,4 +1,4 @@
-// Configuration 
+// Configuration
 @import 'config/functions';
 @import 'config/mixins';
 @import 'config/variables';
@@ -8,13 +8,15 @@
 @import 'common/global';
 @import 'common/reset';
 
-// Elements 
+// Elements
+@import 'elements/content';
 @import 'elements/icon';
 @import 'elements/notification';
 @import 'elements/table';
 
 // Components
 @import 'components/accordion';
+@import 'components/button';
 @import 'components/card';
 @import 'components/navbar';
 @import 'components/tabs';
