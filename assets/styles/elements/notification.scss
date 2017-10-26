@@ -34,7 +34,7 @@ $notification-padding: 1.25rem 2.5rem 1.25rem 1.5rem !default;
     $color: nth($pair, 1);
     $color-invert: nth($pair, 2);
 
-    &__#{$name} {
+    &--#{$name} {
       background-color: $color;
       color: $color-invert;
     }

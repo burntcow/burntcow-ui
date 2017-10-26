@@ -321,7 +321,7 @@ $navbar-divider-background-color: $border !default;
     }
   }
 
-  .navbar__burger {
+  .navbar__toggle {
     display: none;
   }
 
@@ -434,7 +434,7 @@ $navbar-divider-background-color: $border !default;
     }
   }
 
-  .navbar__item.has-dropdown {
+  .navbar__item.navbar__dropdown {
 
     &:hover,
     &.is-active {

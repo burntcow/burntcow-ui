@@ -14,7 +14,7 @@
     $color: nth($pair, 1);
     $color-invert: nth($pair, 2);
 
-    &__#{$name} {
+    &--#{$name} {
       background-color: $color;
       color: $color-invert;
 
@@ -57,28 +57,9 @@
         }
       }
 
-      .tabs {
-
-        a {
-          color: $color-invert;
-          opacity: 0.9;
-
-          &:hover {
-            opacity: 1;
-          }
-        }
-
-        li {
-
-          &.is-active a {
-            opacity: 1;
-          }
-        }
-      }
-
       // Modifiers
 
-      &.hero__bold {
+      &.hero--bold {
         $gradient-top-left: darken(saturate(adjust-hue($color, -10deg), 10%), 10%);
         $gradient-bottom-right: lighten(saturate(adjust-hue($color, 10deg), 5%), 5%);
         background-image: linear-gradient(141deg, $gradient-top-left 0%, $color 71%, $gradient-bottom-right 100%);

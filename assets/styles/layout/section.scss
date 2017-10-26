@@ -14,15 +14,15 @@ $section-padding-large: 18rem 1.5rem !default;
   @include desktop() {
     // Sizes
 
-    &__small {
+    &--small {
       padding: $section-padding-small;
     }
 
-    &__medium {
+    &--medium {
       padding: $section-padding-medium;
     }
 
-    &__large {
+    &--large {
       padding: $section-padding-large;
     }
   }

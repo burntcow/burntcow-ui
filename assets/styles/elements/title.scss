@@ -41,11 +41,7 @@ $subtitle-strong-weight: $weight-semibold !default;
     font-weight: $title-strong-weight;
   }
 
-  & + .highlight {
-    margin-top: -0.75rem;
-  }
-
-  &:not(.is-spaced) + .subtitle {
+  &:not(.title--spaced) + .subtitle {
     margin-top: -1.5rem;
   }
 
@@ -53,7 +49,7 @@ $subtitle-strong-weight: $weight-semibold !default;
   @each $size in $sizes {
     $i: index($sizes, $size);
 
-    &__#{$i} {
+    &--#{$i} {
       font-size: $size;
     }
   }
@@ -70,7 +66,7 @@ $subtitle-strong-weight: $weight-semibold !default;
     font-weight: $subtitle-strong-weight;
   }
 
-  &:not(.is-spaced) + .title {
+  &:not(.subtitle--spaced) + .title {
     margin-top: -1.5rem;
   }
 

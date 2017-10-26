@@ -12,7 +12,7 @@
     max-width: $desktop - (2 * $gap);
     width: $desktop - (2 * $gap);
 
-    &__fluid {
+    &--fluid {
       margin-left: $gap;
       margin-right: $gap;
       max-width: none;
@@ -23,7 +23,7 @@
   // Widescreen
   @include until($widescreen) {
 
-    &__widescreen {
+    &--widescreen {
       max-width: $widescreen - (2 * $gap);
       width: auto;
     }
@@ -32,7 +32,7 @@
   // Full HD
   @include until($fullhd) {
 
-    &__fullhd {
+    &--fullhd {
       max-width: $fullhd - (2 * $gap);
       width: auto;
     }
