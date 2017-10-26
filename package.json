@@ -187,7 +187,7 @@
     "clean:dist": "rimraf dist",
     "lint": "npm run -s lint:scripts && npm run -s lint:styles",
     "lint:scripts": "eslint assets/scripts",
-    "lint:styles": "stylelint 'assets/styles/**/*.{css,scss}' --syntax scss --fix",
+    "lint:styles": "stylelint 'assets/styles/**/*.{css,scss}' --fix --syntax scss",
     "test": "npm run -s lint"
   },
   "engines": {
