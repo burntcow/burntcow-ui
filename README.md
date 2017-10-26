@@ -2,6 +2,8 @@
 
 Here lives a UI framework built with love for use in Burntcow projects.
 
+**Note:** This is a work in progress and is not ready for use.
+
 ## Dependencies
 
 * Node.js
