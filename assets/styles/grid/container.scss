@@ -1,3 +1,4 @@
+
 /*------------------------------------*\
   #CONTAINER
 \*------------------------------------*/
@@ -5,11 +6,12 @@
 .container {
   margin: 0 auto;
   position: relative;
-  
+
   // Desktop
   @include from($desktop) {
     max-width: $desktop - (2 * $gap);
     width: $desktop - (2 * $gap);
+
     &__fluid {
       margin-left: $gap;
       margin-right: $gap;
@@ -17,29 +19,31 @@
       width: auto;
     }
   }
-  
+
   // Widescreen
   @include until($widescreen) {
+
     &__widescreen {
       max-width: $widescreen - (2 * $gap);
       width: auto;
     }
   }
-  
+
   // Full HD
   @include until($fullhd) {
+
     &__fullhd {
       max-width: $fullhd - (2 * $gap);
       width: auto;
     }
   }
-  
+
   // Widescreen
   @include from($widescreen) {
     max-width: $widescreen - (2 * $gap);
     width: $widescreen - (2 * $gap);
   }
-  
+
   // FullHD
   @include from($fullhd) {
     max-width: $fullhd - (2 * $gap);

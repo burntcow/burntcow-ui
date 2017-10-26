@@ -1,3 +1,4 @@
+
 /*------------------------------------*\
   #HERO
 \*------------------------------------*/
@@ -12,50 +13,63 @@
   @each $name, $pair in $colors {
     $color: nth($pair, 1);
     $color-invert: nth($pair, 2);
+
     &__#{$name} {
       background-color: $color;
       color: $color-invert;
+
       a:not(.button),
       strong {
         color: inherit;
       }
+
       .title {
         color: $color-invert;
       }
+
       .subtitle {
         color: rgba($color-invert, 0.9);
+
         a:not(.button),
         strong {
           color: $color-invert;
         }
       }
-      .navbar-menu {
+
+      .navbar__menu {
         @include touch() {
           background-color: $color;
         }
       }
-      .navbar-item a,
-      .navbar-link {
+
+      .navbar__item,
+      .navbar__link {
         color: rgba($color-invert, 0.7);
       }
-      .navbar-item a,
-      .navbar-link {
+
+      .navbar__item,
+      .navbar__link {
+
         &:hover,
         &.is-active {
           background-color: darken($color, 5%);
           color: $color-invert;
         }
       }
+
       .tabs {
+
         a {
           color: $color-invert;
           opacity: 0.9;
+
           &:hover {
             opacity: 1;
           }
         }
 
         li {
+
           &.is-active a {
             opacity: 1;
           }
@@ -63,12 +77,14 @@
       }
 
       // Modifiers
+
       &.hero__bold {
         $gradient-top-left: darken(saturate(adjust-hue($color, -10deg), 10%), 10%);
         $gradient-bottom-right: lighten(saturate(adjust-hue($color, 10deg), 5%), 5%);
         background-image: linear-gradient(141deg, $gradient-top-left 0%, $color 71%, $gradient-bottom-right 100%);
         @include mobile() {
-          .navbar-menu {
+
+          .navbar__menu {
             background-image: linear-gradient(141deg, $gradient-top-left 0%, $color 71%, $gradient-bottom-right 100%);
           }
         }
@@ -77,34 +93,42 @@
   }
 
   // Sizes
-  &__small {
-    .hero--body {
+
+  &--small {
+
+    .hero__body {
       padding-bottom: 1.5rem;
       padding-top: 1.5rem;
     }
   }
-  &__medium {
+
+  &--medium {
     @include tablet() {
-      .hero--body {
+
+      .hero__body {
         padding-bottom: 9rem;
         padding-top: 9rem;
       }
     }
   }
-  &__large {
+
+  &--large {
     @include tablet() {
-      .hero--body {
+
+      .hero__body {
         padding-bottom: 18rem;
         padding-top: 18rem;
       }
     }
   }
 
-  &__halfheight,
-  &__fullheight {
-    .hero--body {
+  &--halfheight,
+  &--fullheight {
+
+    .hero__body {
       align-items: center;
       display: flex;
+
       & > .container {
         flex-grow: 1;
         flex-shrink: 1;
@@ -112,22 +136,24 @@
     }
   }
 
-  &__halfheight {
+  &--halfheight {
     min-height: 50vh;
   }
-  &__fullheight {
+
+  &--fullheight {
     min-height: 100vh;
   }
 }
 
 // Containers
-.hero--header,
-.hero--footer {
+
+.hero__header,
+.hero__footer {
   flex-grow: 0;
   flex-shrink: 0;
 }
 
-.hero--body {
+.hero__body {
   flex-grow: 1;
   flex-shrink: 0;
   padding: 3rem 1.5rem;

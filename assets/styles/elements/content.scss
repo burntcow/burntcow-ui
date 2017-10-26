@@ -1,3 +1,4 @@
+
 /*------------------------------------*\
   #CONTENT
 \*------------------------------------*/
@@ -26,11 +27,13 @@ $content-table-foot-cell-color: $text-strong !default;
   @include block();
 
   // Inline
+
   li + li {
     margin-top: 0.25em;
   }
 
   // Blocks
+
   p,
   dl,
   ol,
@@ -38,6 +41,7 @@ $content-table-foot-cell-color: $text-strong !default;
   blockquote,
   pre,
   table {
+
     &:not(:last-child) {
       margin-bottom: 1em;
     }
@@ -57,36 +61,45 @@ $content-table-foot-cell-color: $text-strong !default;
   h1 {
     font-size: 2em;
     margin-bottom: 0.5em;
+
     &:not(:first-child) {
       margin-top: 1em;
     }
   }
+
   h2 {
     font-size: 1.75em;
     margin-bottom: 0.5714em;
+
     &:not(:first-child) {
       margin-top: 1.1428em;
     }
   }
+
   h3 {
     font-size: 1.5em;
     margin-bottom: 0.6666em;
+
     &:not(:first-child) {
       margin-top: 1.3333em;
     }
   }
+
   h4 {
     font-size: 1.25em;
     margin-bottom: 0.8em;
   }
+
   h5 {
     font-size: 1.125em;
     margin-bottom: 0.8888em;
   }
+
   h6 {
     font-size: 1em;
     margin-bottom: 1em;
   }
+
   blockquote {
     background-color: $content-blockquote-background-color;
     border-left: $content-blockquote-border-left;
@@ -94,6 +107,7 @@ $content-table-foot-cell-color: $text-strong !default;
   }
 
   // Lists
+
   ol {
     list-style: decimal outside;
     margin-left: 2em;
@@ -104,9 +118,11 @@ $content-table-foot-cell-color: $text-strong !default;
     list-style: disc outside;
     margin-left: 2em;
     margin-top: 1em;
+
     ul {
       list-style-type: circle;
       margin-top: 0.5em;
+
       ul {
         list-style-type: square;
       }
@@ -121,15 +137,19 @@ $content-table-foot-cell-color: $text-strong !default;
     margin-left: 2em;
     margin-right: 2em;
     text-align: center;
+
     &:not(:first-child) {
       margin-top: 2em;
     }
+
     &:not(:last-child) {
       margin-bottom: 2em;
     }
+
     img {
       display: inline-block;
     }
+
     figcaption {
       font-style: italic;
     }
@@ -157,17 +177,21 @@ $content-table-foot-cell-color: $text-strong !default;
       padding: $content-table-cell-padding;
       vertical-align: top;
     }
+
     th {
       color: $content-table-cell-heading-color;
       text-align: left;
     }
+
     tr {
+
       &:hover {
         background-color: $content-table-row-hover-background-color;
       }
     }
 
     thead {
+
       td,
       th {
         border-width: $content-table-head-cell-border-width;
@@ -176,6 +200,7 @@ $content-table-foot-cell-color: $text-strong !default;
     }
 
     tfoot {
+
       td,
       th {
         border-width: $content-table-foot-cell-border-width;
@@ -184,8 +209,11 @@ $content-table-foot-cell-color: $text-strong !default;
     }
 
     tbody {
+
       tr {
+
         &:last-child {
+
           td,
           th {
             border-bottom-width: 0;
@@ -196,12 +224,15 @@ $content-table-foot-cell-color: $text-strong !default;
   }
 
   // Sizes
+
   &__small {
     font-size: $size-small;
   }
+
   &__medium {
     font-size: $size-medium;
   }
+
   &__large {
     font-size: $size-large;
   }

@@ -1,3 +1,4 @@
+
 /*------------------------------------*\
   #ICON
 \*------------------------------------*/
@@ -13,16 +14,19 @@ $icon-size-large: 3rem !default;
   justify-content: center;
   height: $icon-size;
   width: $icon-size;
-  
+
   // Sizes
+
   &__small {
     height: $icon-size-small;
     width: $icon-size-small;
   }
+
   &__medium {
     height: $icon-size-medium;
     width: $icon-size-medium;
   }
+
   &__large {
     height: $icon-size-large;
     width: $icon-size-large;

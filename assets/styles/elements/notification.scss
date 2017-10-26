@@ -1,3 +1,4 @@
+
 /*------------------------------------*\
   #NOTIFICATION
 \*------------------------------------*/
@@ -12,28 +13,30 @@ $notification-padding: 1.25rem 2.5rem 1.25rem 1.5rem !default;
   border-radius: $notification-radius;
   padding: $notification-padding;
   position: relative;
-  
+
   // Links
+
   a:not(.button) {
     color: currentColor;
     text-decoration: underline;
   }
-  
+
   // Delete
+
   & > .delete {
     position: absolute;
     right: 0.5em;
     top: 0.5em;
   }
-    
+
   // Colors
   @each $name, $pair in $colors {
     $color: nth($pair, 1);
     $color-invert: nth($pair, 2);
+
     &__#{$name} {
       background-color: $color;
       color: $color-invert;
     }
   }
 }
-    

@@ -1,3 +1,8 @@
+
+/*------------------------------------*\
+  #TITLE
+\*------------------------------------*/
+
 $title-color: $grey-darker !default;
 $title-size: $size-3 !default;
 $title-weight: $weight-semibold !default;
@@ -14,10 +19,12 @@ $subtitle-strong-weight: $weight-semibold !default;
 .subtitle {
   @include block();
   word-break: break-word;
+
   em,
   span {
     font-weight: inherit;
   }
+
   .tag {
     vertical-align: middle;
   }
@@ -28,13 +35,16 @@ $subtitle-strong-weight: $weight-semibold !default;
   font-size: $title-size;
   font-weight: $title-weight;
   line-height: 1.125;
+
   strong {
     color: $title-strong-color;
     font-weight: $title-strong-weight;
   }
+
   & + .highlight {
     margin-top: -0.75rem;
   }
+
   &:not(.is-spaced) + .subtitle {
     margin-top: -1.5rem;
   }
@@ -42,6 +52,7 @@ $subtitle-strong-weight: $weight-semibold !default;
   // Sizes
   @each $size in $sizes {
     $i: index($sizes, $size);
+
     &__#{$i} {
       font-size: $size;
     }
@@ -53,10 +64,12 @@ $subtitle-strong-weight: $weight-semibold !default;
   font-size: $subtitle-size;
   font-weight: $subtitle-weight;
   line-height: 1.25;
+
   strong {
     color: $subtitle-strong-color;
     font-weight: $subtitle-strong-weight;
   }
+
   &:not(.is-spaced) + .title {
     margin-top: -1.5rem;
   }
@@ -64,6 +77,7 @@ $subtitle-strong-weight: $weight-semibold !default;
   // Sizes
   @each $size in $sizes {
     $i: index($sizes, $size);
+
     &__#{$i} {
       font-size: $size;
     }
@@ -71,6 +85,7 @@ $subtitle-strong-weight: $weight-semibold !default;
 }
 
 .heading {
+
   &:not(:last-child) {
     margin-bottom: 1.5rem;
   }

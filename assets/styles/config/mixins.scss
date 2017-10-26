@@ -1,9 +1,11 @@
+
 /*------------------------------------*\
   #MIXINS
 \*------------------------------------*/
 
 // Block
 @mixin block() {
+
   &:not(:last-child) {
     margin-bottom: 1.5rem
   }
@@ -27,6 +29,7 @@
 @mixin placeholder() {
   $placeholders: ':-moz' ':-webkit-input' '-moz' '-ms-input';
   @each $placeholder in $placeholders {
+
     &:#{$placeholder}-placeholder {
       @content;
     }
@@ -35,6 +38,7 @@
 
 // Clearfix
 @mixin clearfix() {
+
   &::after {
     clear: both;
     content: ' ';
@@ -66,6 +70,7 @@
   height: $dimensions;
   position: relative;
   width: $dimensions;
+
   span {
     background-color: currentColor;
     display: block;
@@ -81,9 +86,11 @@
     &:nth-child(1) {
       top: calc(50% - 6px);
     }
+
     &:nth-child(2) {
       top: calc(50% - 1px);
     }
+
     &:nth-child(3) {
       top: calc(50% + 4px);
     }
@@ -94,14 +101,19 @@
   }
 
   // States
+
   &.is-active {
+
     span {
+
       &:nth-child(1) {
         transform: translateY(5px) rotate(45deg);
       }
+
       &:nth-child(2) {
         opacity: 0;
       }
+
       &:nth-child(3) {
         transform: translateY(-5px) rotate(-45deg);
       }

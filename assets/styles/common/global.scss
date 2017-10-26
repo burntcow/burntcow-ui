@@ -1,3 +1,4 @@
+
 /*------------------------------------*\
   #GLOBAL
 \*------------------------------------*/
@@ -70,9 +71,11 @@ a {
   color: $link;
   cursor: pointer;
   text-decoration: none;
+
   strong {
     color: currentColor;
   }
+
   &:hover {
     color: $link-hover;
   }
@@ -127,6 +130,7 @@ pre {
   padding: 1.25rem 1.5rem;
   white-space: pre;
   word-wrap: normal;
+
   code {
     background-color: transparent;
     color: currentColor;
@@ -136,11 +140,13 @@ pre {
 }
 
 table {
+
   td,
   th {
     text-align: left;
     vertical-align: top;
   }
+
   th {
     color: $text-strong;
   }

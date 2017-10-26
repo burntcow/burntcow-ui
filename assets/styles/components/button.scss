@@ -1,3 +1,4 @@
+
 /*------------------------------------*\
   #BUTTON
 \*------------------------------------*/
@@ -46,44 +47,22 @@ $button-static-border-color: $grey-lighter !default;
   align-items: center;
   display: inline-flex;
   justify-content: flex-start;
-  line-height: 1.5;
-  vertical-align: top;
   background-color: $button-background-color;
   border-color: $button-border-color;
   color: $button-color;
   cursor: pointer;
   justify-content: center;
-  padding-left: 0.75em;
-  padding-right: 0.75em;
+  padding: 0.75em;
   text-align: center;
   white-space: nowrap;
   user-select: none;
+
   strong {
     color: inherit;
   }
-  .icon {
-    &,
-    &__small,
-    &__medium,
-    &__large {
-      height: 1.5em;
-      width: 1.5em;
-    }
-    &:first-child:not(:last-child) {
-      margin-left: calc(-0.375em - 1px);
-      margin-right: 0.1875em;
-    }
-    &:last-child:not(:first-child) {
-      margin-left: 0.1875em;
-      margin-right: calc(-0.375em - 1px);
-    }
-    &:first-child:last-child {
-      margin-left: calc(-0.375em - 1px);
-      margin-right: calc(-0.375em - 1px);
-    }
-  }
 
   // States
+
   &:hover,
   &.is-hovered {
     border-color: $button-hover-border-color;
@@ -94,6 +73,7 @@ $button-static-border-color: $grey-lighter !default;
   &.is-focused {
     border-color: $button-focus-border-color;
     color: $button-focus-color;
+
     &:not(:active) {
       box-shadow: $button-focus-box-shadow-size $button-focus-box-shadow-color;
     }
@@ -106,11 +86,13 @@ $button-static-border-color: $grey-lighter !default;
   }
 
   // Colors
-  &__text {
+
+  &--text {
     background-color: transparent;
     border-color: transparent;
     color: $button-text-color;
     text-decoration: underline;
+
     &:hover,
     &.is-hovered,
     &:focus,
@@ -118,11 +100,13 @@ $button-static-border-color: $grey-lighter !default;
       background-color: $button-text-hover-background-color;
       color: $button-text-hover-color;
     }
+
     &:active,
     &.is-active {
       background-color: darken($button-text-hover-background-color, 5%);
       color: $button-text-hover-color;
     }
+
     &[disabled] {
       background-color: transparent;
       border-color: transparent;
@@ -131,12 +115,17 @@ $button-static-border-color: $grey-lighter !default;
   }
 
   @each $name, $pair in $colors {
+    // Colors
     $color: nth($pair, 1);
     $color-invert: nth($pair, 2);
-    &__#{$name} {
+
+    &--#{$name} {
       background-color: $color;
       border-color: transparent;
       color: $color-invert;
+
+      // States
+
       &:hover,
       &.is-hovered {
         background-color: darken($color, 2.5%);
@@ -148,6 +137,7 @@ $button-static-border-color: $grey-lighter !default;
       &.is-focused {
         border-color: transparent;
         color: $color-invert;
+
         &:not(:active) {
           box-shadow: $button-focus-box-shadow-size rgba($color, 0.25);
         }
@@ -161,6 +151,7 @@ $button-static-border-color: $grey-lighter !default;
       }
 
       &.is-loading {
+
         &::after {
           border-color: transparent transparent $color-invert $color-invert !important;
         }
@@ -172,12 +163,16 @@ $button-static-border-color: $grey-lighter !default;
         box-shadow: none;
       }
 
-      &__inverted {
+      // Inverted
+
+      &--inverted {
         background-color: $color-invert;
         color: $color;
+
         &:hover {
           background-color: darken($color-invert, 5%);
         }
+
         &[disabled] {
           background-color: $color-invert;
           border-color: transparent;
@@ -186,17 +181,20 @@ $button-static-border-color: $grey-lighter !default;
         }
       }
 
-      &__outlined {
+      &--outlined {
         background-color: transparent;
         border-color: $color;
         color: $color;
+
         &:hover,
         &:focus {
           background-color: $color;
           border-color: $color;
           color: $color-invert;
         }
+
         &.is-loading {
+
           &::after {
             border-color: transparent transparent $color $color !important;
           }
@@ -213,17 +211,21 @@ $button-static-border-color: $grey-lighter !default;
   }
 
   // Sizes
-  &__small {
+
+  &--small {
     @include button-small();
   }
-  &__medium {
+
+  &--medium {
     @include button-medium();
   }
-  &__large {
+
+  &--large {
     @include button-large();
   }
 
   // Modifiers
+
   &[disabled] {
     background-color: $button-disabled-background-color;
     border-color: $button-disabled-border-color;
@@ -231,12 +233,12 @@ $button-static-border-color: $grey-lighter !default;
     opacity: $button-disabled-opacity;
   }
 
-  &__fullwidth {
+  &--fullwidth {
     display: flex;
     width: 100%;
   }
 
-  &__static {
+  &--static {
     background-color: $button-static-background-color;
     border-color: $button-static-border-color;
     color: $button-static-color;
@@ -245,9 +247,11 @@ $button-static-border-color: $grey-lighter !default;
   }
 
   // @TODO LOADER ANIMATION / MIXIN
+
   &.is-loading {
     color: transparent !important;
     pointer-events: none;
+
     &::after {
       //@include loader();
       @include center(1em);

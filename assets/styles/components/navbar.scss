@@ -1,3 +1,4 @@
+
 /*------------------------------------*\
   #NAVBAR
 \*------------------------------------*/
@@ -41,61 +42,80 @@ $navbar-divider-background-color: $border !default;
   background-color: $navbar-background-color;
   min-height: $navbar-height;
   position: relative;
+
   @each $name, $pair in $colors {
     $color: nth($pair, 1);
     $color-invert: nth($pair, 2);
-    &__#{$name} {
+
+    &--#{$name} {
       background-color: $color;
       color: $color-invert;
 
-      .navbar--brand {
-        & > .navbar--item a,
-        .navbar--link {
+      .navbar__brand {
+
+        & > .navbar__item a,
+        .navbar__link {
           color: $color-invert;
         }
-        & > .navbar--item a,
-        .navbar--link {
+
+        & > .navbar__item a,
+        .navbar__link {
+
           &:hover,
           &.is-active {
             background-color: darken($color, 5%);
             color: $color-invert;
           }
         }
-        .navbar--link {
+
+        .navbar__link {
+
           &::after {
             border-color: $color-invert;
           }
         }
+
       }
 
       @include desktop() {
-        .navbar--start,
-        .navbar--end {
-          & > .navbar--item a,
-          .navbar--link {
+
+        .navbar__start,
+        .navbar__end {
+
+          & > .navbar__item a,
+          .navbar__link {
             color: $color-invert;
           }
-          & > .navbar--item a,
-          .navbar--link {
+
+          & > .navbar__item a,
+          .navbar__link {
+
             &:hover,
             &.is-active {
               background-color: darken($color, 5%);
               color: $color-invert;
             }
           }
-          .navbar--link {
+
+          .navbar__link {
+
             &::after {
               border-color: $color-invert;
             }
           }
+
         }
-        .navbar--item.navbar--dropdown:hover .navbar--link,
-        .navbar--item.navbar--dropdown.is-active .navbar--link {
+
+        .navbar__item.navbar__dropdown:hover .navbar__link,
+        .navbar__item.navbar__dropdown.is-active .navbar__link {
           background-color: darken($color, 5%);
           color: $color-invert;
         }
-        .navbar--dropdown {
-          .navbar--item a {
+
+        .navbar__dropdown {
+
+          .navbar__item a {
+
             &.is-active {
               background-color: $color;
               color: $color-invert;
@@ -118,32 +138,32 @@ $navbar-divider-background-color: $border !default;
   }
 }
 
-.navbar--brand,
-.navbar--tabs {
+.navbar__brand,
+.navbar__tabs {
   align-items: stretch;
   display: flex;
   flex-shrink: 0;
   min-height: $navbar-height;
 }
 
-.navbar--tabs {
+.navbar__tabs {
   @include overflow-touch();
   max-width: 100vw;
   overflow-x: auto;
   overflow-y: hidden;
 }
 
-.navbar--burger {
+.navbar__toggle {
   @include hamburger($navbar-height);
   margin-left: auto;
 }
 
-.navbar--menu {
+.navbar__menu {
   display: none;
 }
 
-.navbar--item a,
-.navbar--link {
+.navbar__item a,
+.navbar__link {
   color: $navbar-item-color;
   display: block;
   line-height: 1.5;
@@ -151,8 +171,9 @@ $navbar-divider-background-color: $border !default;
   position: relative;
 }
 
-.navbar--item a,
-.navbar--link {
+.navbar__item a,
+.navbar__link {
+
   &:hover,
   &.is-active {
     background-color: $navbar-item-hover-background-color;
@@ -160,18 +181,19 @@ $navbar-divider-background-color: $border !default;
   }
 }
 
-.navbar--item a {
+.navbar__item a {
   flex-grow: 0;
   flex-shrink: 0;
+
   img {
     max-height: $navbar-item-img-max-height;
   }
 
-  &.navbar--dropdown {
+  &.navbar__dropdown {
     padding: 0;
   }
 
-  &.navbar--tab {
+  &.navbar__tab {
     border-bottom: 1px solid transparent;
     min-height: $navbar-height;
     padding-bottom: calc(0.5rem - 1px);
@@ -192,26 +214,27 @@ $navbar-divider-background-color: $border !default;
   }
 }
 
-.navbar--content {
+.navbar__content {
   flex-grow: 1;
   flex-shrink: 1;
 }
 
-.navbar--link {
+.navbar__link {
   padding-right: 2.5em;
 }
 
-.navbar--dropdown {
+.navbar__dropdown {
   font-size: 0.875rem;
   padding-bottom: 0.5rem;
   padding-top: 0.5rem;
-  .navbar--item a {
+
+  .navbar__item a {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
-.navbar--divider {
+.navbar__divider {
   background-color: $navbar-divider-background-color;
   border: none;
   display: none;
@@ -220,20 +243,25 @@ $navbar-divider-background-color: $border !default;
 }
 
 @include touch() {
+
   .navbar > .container {
     display: block;
   }
-  .navbar--brand,
-  .navbar--tabs {
-    .navbar--item a {
+
+  .navbar__brand,
+  .navbar__tabs {
+
+    .navbar__item a {
       align-items: center;
       display: flex;
     }
   }
-  .navbar--menu {
+
+  .navbar__menu {
     background-color: $white;
     box-shadow: 0 8px 16px rgba($black, 0.1);
     padding: 0.5rem 0;
+
     &.is-active {
       display: block;
     }
@@ -241,39 +269,49 @@ $navbar-divider-background-color: $border !default;
 }
 
 @include desktop() {
+
   .navbar,
-  .navbar--menu,
-  .navbar--start,
-  .navbar--end {
+  .navbar__menu,
+  .navbar__start,
+  .navbar__end {
     align-items: stretch;
     display: flex;
   }
+
   .navbar {
     min-height: $navbar-height;
+
     &__transparent {
-      .navbar--item a,
-      .navbar--link {
+
+      .navbar__item a,
+      .navbar__link {
+
         &:hover,
         &.is-active {
           background-color: transparent !important;
         }
       }
 
-      .navbar--item.navbar--dropdown {
+      .navbar__item.navbar__dropdown {
+
         &.is-active,
         &.is-hoverable:hover {
-          .navbar--link {
+
+          .navbar__link {
             background-color: transparent !important;
           }
         }
       }
 
-      .navbar--dropdown {
-        .navbar--item a {
+      .navbar__dropdown {
+
+        .navbar__item a {
+
           &:hover {
             background-color: $navbar-dropdown-item-hover-background-color;
             color: $navbar-dropdown-item-hover-color;
           }
+
           &.is-active {
             background-color: $navbar-dropdown-item-active-background-color;
             color: $navbar-dropdown-item-active-color;
@@ -283,30 +321,33 @@ $navbar-divider-background-color: $border !default;
     }
   }
 
-  .navbar--burger {
+  .navbar__burger {
     display: none;
   }
 
-  .navbar--item a,
-  .navbar--link {
+  .navbar__item a,
+  .navbar__link {
     align-items: center;
     display: flex;
   }
 
-  .navbar--item {
-    &.navbar--dropdown {
+  .navbar__item {
+
+    &.navbar__dropdown {
       align-items: stretch;
     }
 
     &.is-active,
     &.is-hoverable:hover {
-      .navbar--dropdown {
+
+      .navbar__dropdown {
         display: block;
       }
     }
   }
 
-  .navbar--link {
+  .navbar__link {
+
     &::after {
       @include arrow($navbar-dropdown-arrow);
       margin-top: -0.375em;
@@ -315,22 +356,22 @@ $navbar-divider-background-color: $border !default;
     }
   }
 
-  .navbar--menu {
+  .navbar__menu {
     flex-grow: 1;
     flex-shrink: 0;
   }
 
-  .navbar--start {
+  .navbar__start {
     justify-content: flex-start;
     margin-right: auto;
   }
 
-  .navbar--end {
+  .navbar__end {
     justify-content: flex-end;
     margin-left: auto;
   }
 
-  .navbar--dropdown {
+  .navbar__dropdown {
     background-color: $navbar-dropdown-background-color;
     border-bottom-left-radius: $navbar-dropdown-radius;
     border-bottom-right-radius: $navbar-dropdown-radius;
@@ -343,16 +384,20 @@ $navbar-divider-background-color: $border !default;
     position: absolute;
     top: 100%;
     z-index: $navbar-dropdown-z;
-    .navbar--item a {
+
+    .navbar__item a {
       padding: 0.375rem 1rem;
       white-space: nowrap;
     }
-    .navbar--item a {
+
+    .navbar__item a {
       padding-right: 3rem;
+
       &:hover {
         background-color: $navbar-dropdown-item-hover-background-color;
         color: $navbar-dropdown-item-hover-color;
       }
+
       &.is-active {
         background-color: $navbar-dropdown-item-active-background-color;
         color: $navbar-dropdown-item-active-color;
@@ -360,33 +405,41 @@ $navbar-divider-background-color: $border !default;
     }
   }
 
-  .navbar--divider {
+  .navbar__divider {
     display: block;
   }
 
   .container > .navbar {
-    .navbar--brand {
+
+    .navbar__brand {
       margin-left: -1rem;
     }
-    .navbar--menu {
+
+    .navbar__menu {
       margin-right: -1rem;
     }
   }
 
   // Hover/Active states
-  .navbar--item,
-  .navbar--link {
+
+  .navbar__item,
+  .navbar__link {
+
     &.is-active {
       color: $navbar-item-active-color;
     }
+
     &.is-active:not(:hover) {
       background-color: $navbar-item-active-background-color;
     }
   }
-  .navbar--item.has-dropdown {
+
+  .navbar__item.has-dropdown {
+
     &:hover,
     &.is-active {
-      .navbar--link {
+
+      .navbar__link {
         background-color: $navbar-item-hover-background-color;
       }
     }
