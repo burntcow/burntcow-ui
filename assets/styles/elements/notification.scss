@@ -13,22 +13,29 @@ $notification-padding: 1.25rem 2.5rem 1.25rem 1.5rem !default;
   padding: $notification-padding;
   position: relative;
 
-  // Links
+
+  /* Notification Links
+     ========================================================================== */
 
   a:not(.button) {
     color: currentColor;
     text-decoration: underline;
   }
 
-  // Delete
 
-  & > .delete {
+  /* Notification Delete
+     ========================================================================== */
+
+  > .delete {
     position: absolute;
     right: 0.5em;
     top: 0.5em;
   }
 
-  // Colors
+
+  /* Notification Colors
+     ========================================================================== */
+
   @each $name, $pair in $colors {
     $color: nth($pair, 1);
     $color-invert: nth($pair, 2);
@@ -37,5 +44,7 @@ $notification-padding: 1.25rem 2.5rem 1.25rem 1.5rem !default;
       background-color: $color;
       color: $color-invert;
     }
+
   }
+
 }

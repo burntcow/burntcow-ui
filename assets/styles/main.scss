@@ -1,38 +1,38 @@
 /* ==========================================================================
-   BURNTCOW-UI
+   Burntcow UI
    ========================================================================== */
 
 // Configuration
-@import "config/functions";
-@import "config/mixins";
-@import "config/variables";
-@import "config/external";
+@import 'config/functions';
+@import 'config/mixins';
+@import 'config/variables';
+@import 'config/external';
 
 // Common
-@import "common/global";
-@import "common/helpers";
-@import "common/reset";
+@import 'common/global';
+@import 'common/helpers';
+@import 'common/reset';
 
 // Elements
-@import "elements/content";
-@import "elements/icon";
-@import "elements/notification";
-@import "elements/table";
-@import "elements/title";
+@import 'elements/content';
+@import 'elements/icon';
+@import 'elements/notification';
+@import 'elements/table';
+@import 'elements/title';
 
 // Components
-@import "components/accordion";
-@import "components/button";
-@import "components/card";
-@import "components/navbar";
-@import "components/tabs";
+@import 'components/accordion';
+@import 'components/button';
+@import 'components/card';
+@import 'components/navbar';
+@import 'components/tabs';
 
 // Grid
-@import "grid/container";
-@import "grid/columns";
+@import 'grid/container';
+@import 'grid/columns';
 
 // Layout
-@import "layout/footer";
-@import "layout/header";
-@import "layout/hero";
-@import "layout/section";
+@import 'layout/footer';
+@import 'layout/header';
+@import 'layout/hero';
+@import 'layout/section';

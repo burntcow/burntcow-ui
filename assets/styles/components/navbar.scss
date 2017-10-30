@@ -12,23 +12,12 @@ $navbar-item-active-color: $black !default;
 $navbar-item-active-background-color: transparent !default;
 $navbar-item-img-max-height: 1.75rem !default;
 
-$navbar-tab-hover-background-color: transparent !default;
-$navbar-tab-hover-border-bottom-color: $link !default;
-$navbar-tab-active-color: $link !default;
-$navbar-tab-active-background-color: transparent !default;
-$navbar-tab-active-border-bottom-color: $link !default;
-$navbar-tab-active-border-bottom-style: solid !default;
-$navbar-tab-active-border-bottom-width: 3px !default;
-
 $navbar-dropdown-background-color: $white !default;
 $navbar-dropdown-border-top: 1px solid $border !default;
 $navbar-dropdown-offset: -4px !default;
 $navbar-dropdown-arrow: $link !default;
 $navbar-dropdown-radius: $radius-large !default;
 $navbar-dropdown-z: 20 !default;
-
-$navbar-dropdown-boxed-radius: $radius-large !default;
-$navbar-dropdown-boxed-shadow: 0 8px 8px rgba($black, 0.1), 0 0 0 1px rgba($black, 0.1) !default;
 
 $navbar-dropdown-item-hover-color: $black !default;
 $navbar-dropdown-item-hover-background-color: $background !default;
@@ -42,6 +31,9 @@ $navbar-divider-background-color: $border !default;
   min-height: $navbar-height;
   position: relative;
 
+  /* Navbar Colors
+     ========================================================================== */
+
   @each $name, $pair in $colors {
     $color: nth($pair, 1);
     $color-invert: nth($pair, 2);
@@ -52,13 +44,9 @@ $navbar-divider-background-color: $border !default;
 
       .navbar__brand {
 
-        & > .navbar__item a:not(.button),
+        .navbar__item a:not(.button),
         .navbar__link {
           color: $color-invert;
-        }
-
-        & > .navbar__item a:not(.button),
-        .navbar__link {
 
           &:hover,
           &.is-active {
@@ -69,9 +57,10 @@ $navbar-divider-background-color: $border !default;
 
         .navbar__link {
 
-          &::after {
+          &:after {
             border-color: $color-invert;
           }
+
         }
 
       }
@@ -81,13 +70,9 @@ $navbar-divider-background-color: $border !default;
         .navbar__start,
         .navbar__end {
 
-          & > .navbar__item a:not(.button),
+          .navbar__item a:not(.button),
           .navbar__link {
             color: $color-invert;
-          }
-
-          & > .navbar__item a:not(.button),
-          .navbar__link {
 
             &:hover,
             &.is-active {
@@ -98,9 +83,10 @@ $navbar-divider-background-color: $border !default;
 
           .navbar__link {
 
-            &::after {
+            &:after {
               border-color: $color-invert;
             }
+
           }
 
         }
@@ -119,47 +105,69 @@ $navbar-divider-background-color: $border !default;
               background-color: $color;
               color: $color-invert;
             }
+
           }
+
         }
+
       }
+
     }
+
   }
 
-  & > .container {
+
+  /* Navbar Container
+     ========================================================================== */
+
+  > .container {
     align-items: stretch;
     display: flex;
     min-height: $navbar-height;
     width: 100%;
   }
 
-  &__shadow {
+
+  /* Navbar Modifiers
+     ========================================================================== */
+
+  &--shadow {
     box-shadow: 0 2px 3px rgba($black, 0.1);
   }
+
 }
 
-.navbar__brand,
-.navbar__tabs {
+
+/* Navbar Brand
+   ========================================================================== */
+
+.navbar__brand {
   align-items: stretch;
   display: flex;
   flex-shrink: 0;
   min-height: $navbar-height;
 }
 
-.navbar__tabs {
-  @include overflow-touch();
-  max-width: 100vw;
-  overflow-x: auto;
-  overflow-y: hidden;
-}
+
+/* Navbar Toggle
+   ========================================================================== */
 
 .navbar__toggle {
   @include hamburger($navbar-height);
   margin-left: auto;
 }
 
+
+/* Navbar Menu
+   ========================================================================== */
+
 .navbar__menu {
   display: none;
 }
+
+
+/* Navbar Item
+   ========================================================================== */
 
 .navbar__item a:not(.button),
 .navbar__link {
@@ -168,10 +176,6 @@ $navbar-divider-background-color: $border !default;
   line-height: 1.5;
   padding: 0.5rem 1rem;
   position: relative;
-}
-
-.navbar__item a:not(.button),
-.navbar__link {
 
   &:hover,
   &.is-active {
@@ -192,25 +196,6 @@ $navbar-divider-background-color: $border !default;
     padding: 0;
   }
 
-  &.navbar__tab {
-    border-bottom: 1px solid transparent;
-    min-height: $navbar-height;
-    padding-bottom: calc(0.5rem - 1px);
-
-    &:hover {
-      background-color: $navbar-tab-hover-background-color;
-      border-bottom-color: $navbar-tab-hover-border-bottom-color;
-    }
-
-    &.is-active {
-      background-color: $navbar-tab-active-background-color;
-      border-bottom-color: $navbar-tab-active-border-bottom-color;
-      border-bottom-style: $navbar-tab-active-border-bottom-style;
-      border-bottom-width: $navbar-tab-active-border-bottom-width;
-      color: $navbar-tab-active-color;
-      padding-bottom: calc(0.5rem - #{$navbar-tab-active-border-bottom-width});
-    }
-  }
 }
 
 .navbar__content {
@@ -231,7 +216,12 @@ $navbar-divider-background-color: $border !default;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
+
 }
+
+
+/* Navbar Divider
+   ========================================================================== */
 
 .navbar__divider {
   background-color: $navbar-divider-background-color;
@@ -254,6 +244,7 @@ $navbar-divider-background-color: $border !default;
       align-items: center;
       display: flex;
     }
+
   }
 
   .navbar__menu {
@@ -264,7 +255,9 @@ $navbar-divider-background-color: $border !default;
     &.is-active {
       display: block;
     }
+
   }
+
 }
 
 @include desktop() {
@@ -280,15 +273,16 @@ $navbar-divider-background-color: $border !default;
   .navbar {
     min-height: $navbar-height;
 
-    &__transparent {
+    &--transparent {
 
-      .navbar__item a:not(.button),
+      .navbar__item,
       .navbar__link {
 
         &:hover,
         &.is-active {
           background-color: transparent !important;
         }
+
       }
 
       .navbar__item.navbar__dropdown {
@@ -299,12 +293,14 @@ $navbar-divider-background-color: $border !default;
           .navbar__link {
             background-color: transparent !important;
           }
+
         }
+
       }
 
       .navbar__dropdown {
 
-        .navbar__item a:not(.button) {
+        .navbar__item {
 
           &:hover {
             background-color: $navbar-dropdown-item-hover-background-color;
@@ -315,9 +311,13 @@ $navbar-divider-background-color: $border !default;
             background-color: $navbar-dropdown-item-active-background-color;
             color: $navbar-dropdown-item-active-color;
           }
+
         }
+
       }
+
     }
+
   }
 
   .navbar__toggle {
@@ -334,6 +334,15 @@ $navbar-divider-background-color: $border !default;
 
     &.navbar__dropdown {
       align-items: stretch;
+
+      &:hover,
+      &.is-active {
+
+        .navbar__link {
+          background-color: $navbar-item-hover-background-color;
+        }
+
+      }
     }
 
     &.is-active,
@@ -342,17 +351,20 @@ $navbar-divider-background-color: $border !default;
       .navbar__dropdown {
         display: block;
       }
+
     }
+
   }
 
   .navbar__link {
 
-    &::after {
+    &:after {
       @include arrow($navbar-dropdown-arrow);
       margin-top: -0.375em;
       right: 1.125em;
       top: 50%;
     }
+
   }
 
   .navbar__menu {
@@ -360,15 +372,27 @@ $navbar-divider-background-color: $border !default;
     flex-shrink: 0;
   }
 
+
+  /* Navbar Start
+     ========================================================================== */
+
   .navbar__start {
     justify-content: flex-start;
     margin-right: auto;
   }
 
+
+  /* Navbar End
+     ========================================================================== */
+
   .navbar__end {
     justify-content: flex-end;
     margin-left: auto;
   }
+
+
+  /* Navbar Dropdown
+     ========================================================================== */
 
   .navbar__dropdown {
     background-color: $navbar-dropdown-background-color;
@@ -385,12 +409,8 @@ $navbar-divider-background-color: $border !default;
     z-index: $navbar-dropdown-z;
 
     .navbar__item a:not(.button) {
-      padding: 0.375rem 1rem;
+      padding: 0.375rem 3rem 0.375rem 1rem;
       white-space: nowrap;
-    }
-
-    .navbar__item a:not(.button) {
-      padding-right: 3rem;
 
       &:hover {
         background-color: $navbar-dropdown-item-hover-background-color;
@@ -401,12 +421,22 @@ $navbar-divider-background-color: $border !default;
         background-color: $navbar-dropdown-item-active-background-color;
         color: $navbar-dropdown-item-active-color;
       }
+
     }
+
   }
+
+
+  /* Navbar Divider
+     ========================================================================== */
 
   .navbar__divider {
     display: block;
   }
+
+
+  /* Navbar Container
+     ========================================================================== */
 
   .container > .navbar {
 
@@ -417,9 +447,12 @@ $navbar-divider-background-color: $border !default;
     .navbar__menu {
       margin-right: -1rem;
     }
+
   }
 
-  // Hover/Active states
+
+  /* Navbar States
+     ========================================================================== */
 
   .navbar__item,
   .navbar__link {
@@ -431,16 +464,7 @@ $navbar-divider-background-color: $border !default;
     &.is-active:not(:hover) {
       background-color: $navbar-item-active-background-color;
     }
+
   }
 
-  .navbar__item.navbar__dropdown {
-
-    &:hover,
-    &.is-active {
-
-      .navbar__link {
-        background-color: $navbar-item-hover-background-color;
-      }
-    }
-  }
 }

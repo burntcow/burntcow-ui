@@ -14,20 +14,23 @@ $icon-size-large: 3rem !default;
   height: $icon-size;
   width: $icon-size;
 
-  // Sizes
 
-  &__small {
+  /* Icon Sizes
+     ========================================================================== */
+
+  &--small {
     height: $icon-size-small;
     width: $icon-size-small;
   }
 
-  &__medium {
+  &--medium {
     height: $icon-size-medium;
     width: $icon-size-medium;
   }
 
-  &__large {
+  &--large {
     height: $icon-size-large;
     width: $icon-size-large;
   }
+
 }

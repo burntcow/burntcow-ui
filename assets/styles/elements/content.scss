@@ -25,13 +25,17 @@ $content-table-foot-cell-color: $text-strong !default;
 .content {
   @include block();
 
-  // Inline
+
+  /* Inline
+     ========================================================================== */
 
   li + li {
     margin-top: 0.25em;
   }
 
-  // Blocks
+
+  /* Blocks
+     ========================================================================== */
 
   p,
   dl,
@@ -44,7 +48,12 @@ $content-table-foot-cell-color: $text-strong !default;
     &:not(:last-child) {
       margin-bottom: 1em;
     }
+
   }
+
+
+  /* Headers
+     ========================================================================== */
 
   h1,
   h2,
@@ -99,13 +108,19 @@ $content-table-foot-cell-color: $text-strong !default;
     margin-bottom: 1em;
   }
 
+
+  /* Blockquote
+     ========================================================================== */
+
   blockquote {
     background-color: $content-blockquote-background-color;
     border-left: $content-blockquote-border-left;
     padding: $content-blockquote-padding;
   }
 
-  // Lists
+
+  /* Lists
+     ========================================================================== */
 
   ol {
     list-style: decimal outside;
@@ -132,6 +147,9 @@ $content-table-foot-cell-color: $text-strong !default;
     margin-left: 2em;
   }
 
+  /* Figure
+     ========================================================================== */
+
   figure {
     margin-left: 2em;
     margin-right: 2em;
@@ -154,6 +172,10 @@ $content-table-foot-cell-color: $text-strong !default;
     }
   }
 
+
+  /* Pre
+     ========================================================================== */
+
   pre {
     @include overflow-touch();
     overflow-x: auto;
@@ -162,13 +184,22 @@ $content-table-foot-cell-color: $text-strong !default;
     word-wrap: normal;
   }
 
+
+  /* Sup / Sub
+     ========================================================================== */
+
   sup,
   sub {
     font-size: 75%;
   }
 
+
+  /* Table
+     ========================================================================== */
+
   table {
-    width: 100%
+    width: 100%;
+
     td,
     th {
       border: $content-table-cell-border;
@@ -187,6 +218,7 @@ $content-table-foot-cell-color: $text-strong !default;
       &:hover {
         background-color: $content-table-row-hover-background-color;
       }
+
     }
 
     thead {
@@ -196,6 +228,7 @@ $content-table-foot-cell-color: $text-strong !default;
         border-width: $content-table-head-cell-border-width;
         color: $content-table-head-cell-color;
       }
+
     }
 
     tfoot {
@@ -205,6 +238,7 @@ $content-table-foot-cell-color: $text-strong !default;
         border-width: $content-table-foot-cell-border-width;
         color: $content-table-foot-cell-color;
       }
+
     }
 
     tbody {
@@ -217,12 +251,17 @@ $content-table-foot-cell-color: $text-strong !default;
           th {
             border-bottom-width: 0;
           }
+
         }
+
       }
+
     }
+
   }
 
-  // Sizes
+  /* Content Sizes
+     ========================================================================== */
 
   &__small {
     font-size: $size-small;

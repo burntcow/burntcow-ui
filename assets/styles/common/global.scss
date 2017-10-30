@@ -101,8 +101,8 @@ img {
   max-width: 100%;
 }
 
-input[type="checkbox"],
-input[type="radio"] {
+input[type='checkbox'],
+input[type='radio'] {
   vertical-align: baseline;
 }
 
@@ -149,4 +149,5 @@ table {
   th {
     color: $text-strong;
   }
+
 }

@@ -2,21 +2,29 @@
    #HELPERS
    ========================================================================== */
 
-// Text Sizes
+/* Text Sizes
+   ========================================================================== */
+
 @each $size in $sizes {
+
   $i: index($sizes, $size);
 
   .text--#{$i} {
     font-size: $size;
   }
+
 }
 
-// Text Colors
+
+/* Text Colors
+   ========================================================================== */
+
 @each $name, $pair in $colors {
-  // Colors
+
   $color: nth($pair, 1);
 
   .text--#{$name} {
     color: $color;
   }
+
 }

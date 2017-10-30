@@ -8,8 +8,10 @@
   flex-direction: column;
   justify-content: space-between;
 
-  /* Colors
+
+  /* Hero Colors
      ========================================================================== */
+
   @each $name, $pair in $colors {
     $color: nth($pair, 1);
     $color-invert: nth($pair, 2);
@@ -45,33 +47,36 @@
       .navbar__item,
       .navbar__link {
         color: rgba($color-invert, 0.7);
-      }
-
-      .navbar__item,
-      .navbar__link {
 
         &:hover,
         &.is-active {
           background-color: darken($color, 5%);
           color: $color-invert;
         }
+
       }
 
-      /* Modifiers
+
+      /* Hero Modifiers
          ========================================================================== */
 
       &.hero--bold {
         $gradient-top-left: darken(saturate(adjust-hue($color, -10deg), 10%), 10%);
         $gradient-bottom-right: lighten(saturate(adjust-hue($color, 10deg), 5%), 5%);
         background-image: linear-gradient(141deg, $gradient-top-left 0%, $color 71%, $gradient-bottom-right 100%);
+
         @include mobile() {
 
           .navbar__menu {
             background-image: linear-gradient(141deg, $gradient-top-left 0%, $color 71%, $gradient-bottom-right 100%);
           }
+
         }
+
       }
+
     }
+
   }
 
   /* Size variants.
@@ -83,26 +88,33 @@
       padding-bottom: 1.5rem;
       padding-top: 1.5rem;
     }
+
   }
 
   &--medium {
+
     @include tablet() {
 
       .hero__body {
         padding-bottom: 9rem;
         padding-top: 9rem;
       }
+
     }
+
   }
 
   &--large {
+
     @include tablet() {
 
       .hero__body {
         padding-bottom: 18rem;
         padding-top: 18rem;
       }
+
     }
+
   }
 
   &--halfheight,
@@ -112,7 +124,7 @@
       align-items: center;
       display: flex;
 
-      & > .container {
+      > .container {
         flex-grow: 1;
         flex-shrink: 1;
       }
@@ -128,7 +140,8 @@
   }
 }
 
-/* Containers
+
+/* Hero Containers
    ========================================================================== */
 
 .hero__header,

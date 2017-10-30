@@ -23,11 +23,10 @@ $subtitle-strong-weight: $weight-semibold !default;
   span {
     font-weight: inherit;
   }
-
-  .tag {
-    vertical-align: middle;
-  }
 }
+
+/* Title
+   ========================================================================== */
 
 .title {
   color: $title-color;
@@ -44,15 +43,22 @@ $subtitle-strong-weight: $weight-semibold !default;
     margin-top: -1.5rem;
   }
 
-  // Sizes
+  /* Title Sizes
+     ========================================================================== */
+
   @each $size in $sizes {
     $i: index($sizes, $size);
 
     &--#{$i} {
       font-size: $size;
     }
+
   }
+
 }
+
+/* Subtitle
+   ========================================================================== */
 
 .subtitle {
   color: $subtitle-color;
@@ -69,7 +75,9 @@ $subtitle-strong-weight: $weight-semibold !default;
     margin-top: -1.5rem;
   }
 
-  // Sizes
+  /* Subtitle Sizes
+     ========================================================================== */
+
   @each $size in $sizes {
     $i: index($sizes, $size);
 
@@ -77,11 +85,12 @@ $subtitle-strong-weight: $weight-semibold !default;
       font-size: $size;
     }
   }
+
 }
 
-.heading {
+/* Heading
+   ========================================================================== */
 
-  &:not(:last-child) {
-    margin-bottom: 1.5rem;
-  }
+.heading {
+  @include block();
 }

@@ -9,9 +9,12 @@ $section-padding-large: 18rem 1.5rem !default;
 
 .section {
   padding: $section-padding;
-  // Responsiveness
+
+
+  /* Section Sizes
+     ========================================================================== */
+
   @include desktop() {
-    // Sizes
 
     &--small {
       padding: $section-padding-small;
@@ -24,5 +27,7 @@ $section-padding-large: 18rem 1.5rem !default;
     &--large {
       padding: $section-padding-large;
     }
+
   }
+
 }

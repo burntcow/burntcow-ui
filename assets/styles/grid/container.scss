@@ -6,7 +6,10 @@
   margin: 0 auto;
   position: relative;
 
-  // Desktop
+
+  /* Desktop Container
+     ========================================================================== */
+
   @include from($desktop) {
     max-width: $desktop - (2 * $gap);
     width: $desktop - (2 * $gap);
@@ -17,33 +20,43 @@
       max-width: none;
       width: auto;
     }
+
   }
 
-  // Widescreen
+
+  /* Widescreen Container
+     ========================================================================== */
+
   @include until($widescreen) {
 
     &--widescreen {
       max-width: $widescreen - (2 * $gap);
       width: auto;
     }
+
   }
 
-  // Full HD
+
+  /* Full HD Container
+     ========================================================================== */
+
   @include until($fullhd) {
 
     &--fullhd {
       max-width: $fullhd - (2 * $gap);
       width: auto;
     }
+
   }
 
-  // Widescreen
+  /* Default Container
+     ========================================================================== */
+
   @include from($widescreen) {
     max-width: $widescreen - (2 * $gap);
     width: $widescreen - (2 * $gap);
   }
 
-  // FullHD
   @include from($fullhd) {
     max-width: $fullhd - (2 * $gap);
     width: $fullhd - (2 * $gap);

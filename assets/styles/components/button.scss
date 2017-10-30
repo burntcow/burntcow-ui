@@ -42,6 +42,10 @@ $button-static-border-color: $grey-lighter !default;
   font-size: $size-large;
 }
 
+
+/* Button
+   ========================================================================== */
+
 .button {
   align-items: center;
   display: inline-flex;
@@ -60,7 +64,9 @@ $button-static-border-color: $grey-lighter !default;
     color: inherit;
   }
 
-  // States
+
+  /* Button States
+     ========================================================================== */
 
   &:hover,
   &.is-hovered {
@@ -84,7 +90,9 @@ $button-static-border-color: $grey-lighter !default;
     color: $button-active-color;
   }
 
-  // Colors
+
+  /* Text Button
+     ========================================================================== */
 
   &--text {
     background-color: transparent;
@@ -113,8 +121,10 @@ $button-static-border-color: $grey-lighter !default;
     }
   }
 
+  /* Button Colors
+     ========================================================================== */
+
   @each $name, $pair in $colors {
-    // Colors
     $color: nth($pair, 1);
     $color-invert: nth($pair, 2);
 
@@ -122,8 +132,6 @@ $button-static-border-color: $grey-lighter !default;
       background-color: $color;
       border-color: transparent;
       color: $color-invert;
-
-      // States
 
       &:hover,
       &.is-hovered {
@@ -151,9 +159,10 @@ $button-static-border-color: $grey-lighter !default;
 
       &.is-loading {
 
-        &::after {
+        &:after {
           border-color: transparent transparent $color-invert $color-invert !important;
         }
+
       }
 
       &[disabled] {
@@ -161,8 +170,6 @@ $button-static-border-color: $grey-lighter !default;
         border-color: transparent;
         box-shadow: none;
       }
-
-      // Inverted
 
       &--inverted {
         background-color: $color-invert;
@@ -194,9 +201,10 @@ $button-static-border-color: $grey-lighter !default;
 
         &.is-loading {
 
-          &::after {
+          &:after {
             border-color: transparent transparent $color $color !important;
           }
+
         }
 
         &[disabled] {
@@ -209,7 +217,9 @@ $button-static-border-color: $grey-lighter !default;
     }
   }
 
-  // Sizes
+
+  /* Button Sizes
+     ========================================================================== */
 
   &--small {
     @include button-small();
@@ -223,7 +233,9 @@ $button-static-border-color: $grey-lighter !default;
     @include button-large();
   }
 
-  // Modifiers
+
+  /* Button Modifiers
+     ========================================================================== */
 
   &[disabled] {
     background-color: $button-disabled-background-color;
@@ -245,13 +257,15 @@ $button-static-border-color: $grey-lighter !default;
     pointer-events: none;
   }
 
-  // @TODO LOADER ANIMATION / MIXIN
+
+  /* Button Loading @TODO LOADER ANIMATION
+     ========================================================================== */
 
   &.is-loading {
     color: transparent !important;
     pointer-events: none;
 
-    &::after {
+    &:after {
       //@include loader();
       @include center(1em);
       position: absolute !important;

@@ -5,8 +5,13 @@
 .header {
   position: relative;
 
+
+  /* Fixed Header
+     ========================================================================== */
+
   &--fixed {
     position: fixed;
     top: 0;
   }
+
 }
