@@ -1,4 +1,4 @@
-# burntcow-ui
+# Burntcow UI
 
 Here lives a UI framework built with love for use in Burntcow projects.
 
@@ -6,8 +6,8 @@ Here lives a UI framework built with love for use in Burntcow projects.
 
 ## Dependencies
 
-* Node.js
-* Yarn 
+* [Node.js]
+* [Yarn]
 
 ## Usage 
 
@@ -21,8 +21,31 @@ $ yarn && yarn run build && yarn run start
 ```
 
 ### Documentation 
+
+Burntcow UI utilizes [Fractal] for documentation.
+
 ```sh 
 $ yarn global add @frctl/fractal
 $ cd docs && yarn
 $ fractal start --sync
 ```
+
+## Resources
+
+Burntcow UI was inspired by multiple different libraries.
+
+* [Bulma]
+* [Inuit]
+* [Sass MQ]
+
+## License
+
+Closed Source. Do not redistribute.
+
+
+[Yarn]: <https://yarnpkg.com/>
+[Node.js]: <https://nodejs.org/>
+[Fractal]: <https://github.com/frctl/fractal>
+[Bulma]: <http://bulma.io/>
+[Inuit]: <https://github.com/inuitcss/inuitcss>
+[Sass MQ]:<https://www.google.com/search?q=sass+mq&ie=utf-8&oe=utf-8>
