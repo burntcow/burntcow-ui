@@ -40,9 +40,8 @@ $button-static-border-color: $grey-lighter !default;
   background-color: $button-background-color;
   border-color: $button-border-color;
   color: $button-color;
-  cursor: pointer;
+  cursor: default;
   justify-content: center;
-  padding: 0.35em 0.75em;
   text-align: center;
   white-space: nowrap;
 
