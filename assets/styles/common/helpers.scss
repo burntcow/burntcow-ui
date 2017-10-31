@@ -86,6 +86,7 @@
   .hidden--mobile {
     display: none !important;
   }
+
 }
 
 @include tablet() {
@@ -93,6 +94,7 @@
   .hidden--tablet {
     display: none !important;
   }
+
 }
 
 @include tablet-only() {
@@ -100,6 +102,7 @@
   .hidden--tablet-only {
     display: none !important;
   }
+
 }
 
 @include touch() {
@@ -107,6 +110,7 @@
   .hidden--touch {
     display: none !important;
   }
+
 }
 
 @include desktop() {
@@ -114,6 +118,7 @@
   .hidden--desktop {
     display: none !important;
   }
+
 }
 
 @include desktop-only() {
@@ -121,6 +126,7 @@
   .hidden--desktop-only {
     display: none !important;
   }
+
 }
 
 @include widescreen() {
@@ -128,6 +134,7 @@
   .hidden--widescreen {
     display: none !important;
   }
+
 }
 
 @include widescreen-only() {
@@ -135,6 +142,7 @@
   .hidden--widescreen-only {
     display: none !important;
   }
+
 }
 
 @include fullhd() {
@@ -142,4 +150,5 @@
   .hidden--fullhd {
     display: none !important;
   }
+
 }
