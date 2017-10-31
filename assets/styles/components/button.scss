@@ -30,26 +30,13 @@ $button-static-color: $grey !default;
 $button-static-background-color: $white-ter !default;
 $button-static-border-color: $grey-lighter !default;
 
-// The button sizes use mixins so they can be used at different breakpoints
-@mixin button-small() {
-  border-radius: $radius-small;
-  font-size: $size-small;
-}
-@mixin button-medium {
-  font-size: $size-medium;
-}
-@mixin button-large {
-  font-size: $size-large;
-}
 
-
-/* Button
+/* Button @TODO Make mixin instead(?)
    ========================================================================== */
 
 .button {
-  align-items: center;
-  display: inline-flex;
-  justify-content: flex-start;
+  @include control();
+  @include unselectable();
   background-color: $button-background-color;
   border-color: $button-border-color;
   color: $button-color;
@@ -58,7 +45,6 @@ $button-static-border-color: $grey-lighter !default;
   padding: 0.35em 0.75em;
   text-align: center;
   white-space: nowrap;
-  user-select: none;
 
   strong {
     color: inherit;
@@ -120,6 +106,7 @@ $button-static-border-color: $grey-lighter !default;
       box-shadow: none;
     }
   }
+
 
   /* Button Colors
      ========================================================================== */
@@ -222,15 +209,16 @@ $button-static-border-color: $grey-lighter !default;
      ========================================================================== */
 
   &--small {
-    @include button-small();
+    border-radius: $radius-small;
+    font-size: $size-small;
   }
 
   &--medium {
-    @include button-medium();
+    font-size: $size-medium;
   }
 
   &--large {
-    @include button-large();
+    font-size: $size-large;
   }
 
 

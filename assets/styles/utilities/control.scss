@@ -1,0 +1,56 @@
+///* ==========================================================================
+//   #CONTROL
+//   ========================================================================== */
+
+$control-radius: $radius !default;
+$control-radius-small: $radius-small !default;
+$control-padding-y: calc(0.375em - 1px) !default;
+$control-padding-x: calc(0.625em - 1px) !default;
+
+@mixin control() {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: $control-radius;
+  box-shadow: none;
+  display: inline-flex;
+  font-size: $size-normal;
+  justify-content: flex-start;
+  padding: $control-padding-y $control-padding-x;
+  position: relative;
+  vertical-align: top;
+
+
+  /* Control States
+     ========================================================================== */
+
+  &:focus,
+  &.is-focused,
+  &:active,
+  &.is-active {
+    outline: none;
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
+  }
+
+}
+
+
+/* Control Sizes
+   ========================================================================== */
+
+@mixin control-small() {
+  border-radius: $control-radius-small;
+  font-size: $size-small;
+}
+
+@mixin control-medium() {
+  font-size: $size-medium;
+}
+
+@mixin control-large() {
+  font-size: $size-large;
+}

@@ -11,6 +11,10 @@ $column-gap: 0.75rem !default;
   flex-shrink: 1;
   padding: $column-gap;
 
+
+  /* Mobile Columns
+     ========================================================================== */
+
   .columns.columns--mobile > &--narrow {
     flex: none;
   }
@@ -100,6 +104,7 @@ $column-gap: 0.75rem !default;
   .columns.columns--mobile > &--offset-four-fifths {
     margin-left: 80%;
   }
+
   @for $i from 1 through 12 {
 
     .columns.columns--mobile > &--#{$i} {
@@ -110,7 +115,12 @@ $column-gap: 0.75rem !default;
     .columns.columns--mobile > &--offset-#{$i} {
       margin-left: ($i / 12) * 100%;
     }
+
   }
+
+
+  /* Mobile Column
+     ========================================================================== */
 
   @include mobile() {
 
@@ -203,6 +213,7 @@ $column-gap: 0.75rem !default;
     &--offset-four-fifths-mobile {
       margin-left: 80%;
     }
+
     @for $i from 1 through 12 {
 
       &--#{$i}-mobile {
@@ -213,8 +224,15 @@ $column-gap: 0.75rem !default;
       &--offset-#{$i}-mobile {
         margin-left: ($i / 12) * 100%;
       }
+
     }
+
   }
+
+
+  /* Tablet Column
+     ========================================================================== */
+
   @include tablet() {
 
     &--narrow,
@@ -339,8 +357,14 @@ $column-gap: 0.75rem !default;
       &--offset-#{$i}-tablet {
         margin-left: ($i / 12) * 100%;
       }
+
     }
+
   }
+
+
+  /* Touch Column
+     ========================================================================== */
 
   @include touch() {
 
@@ -433,6 +457,7 @@ $column-gap: 0.75rem !default;
     &--offset-four-fifths-touch {
       margin-left: 80%;
     }
+
     @for $i from 1 through 12 {
 
       &--#{$i}-touch {
@@ -443,8 +468,15 @@ $column-gap: 0.75rem !default;
       &--offset-#{$i}-touch {
         margin-left: ($i / 12) * 100%;
       }
+
     }
+
   }
+
+
+  /* Desktop Column
+     ========================================================================== */
+
   @include desktop() {
 
     &--narrow-desktop {
@@ -536,6 +568,7 @@ $column-gap: 0.75rem !default;
     &--offset-four-fifths-desktop {
       margin-left: 80%;
     }
+
     @for $i from 1 through 12 {
 
       &--#{$i}-desktop {
@@ -546,8 +579,15 @@ $column-gap: 0.75rem !default;
       &--offset-#{$i}-desktop {
         margin-left: ($i / 12) * 100%;
       }
+
     }
+
   }
+
+
+  /* Widescreen Column
+     ========================================================================== */
+
   @include widescreen() {
 
     &--narrow-widescreen {
@@ -639,6 +679,7 @@ $column-gap: 0.75rem !default;
     &--offset-four-fifths-widescreen {
       margin-left: 80%;
     }
+
     @for $i from 1 through 12 {
 
       &--#{$i}-widescreen {
@@ -649,8 +690,15 @@ $column-gap: 0.75rem !default;
       &--offset-#{$i}-widescreen {
         margin-left: ($i / 12) * 100%;
       }
+
     }
+
   }
+
+
+  /* Full HD Column
+     ========================================================================== */
+
   @include fullhd() {
 
     &--narrow-fullhd {
@@ -742,6 +790,7 @@ $column-gap: 0.75rem !default;
     &--offset-four-fifths-fullhd {
       margin-left: 80%;
     }
+
     @for $i from 1 through 12 {
 
       &--#{$i}-fullhd {
@@ -752,9 +801,16 @@ $column-gap: 0.75rem !default;
       &--offset-#{$i}-fullhd {
         margin-left: ($i / 12) * 100%;
       }
+
     }
+
   }
+
 }
+
+
+/* Columns
+   ========================================================================== */
 
 .columns {
   margin-left: (-$column-gap);
@@ -769,7 +825,9 @@ $column-gap: 0.75rem !default;
     margin-bottom: calc(1.5rem - #{$column-gap});
   }
 
-  // Modifiers
+
+  /* Columns Modifiers
+     ========================================================================== */
 
   &--centered {
     justify-content: center;
@@ -792,6 +850,7 @@ $column-gap: 0.75rem !default;
     &:last-child {
       margin-bottom: 0;
     }
+
   }
 
   &--mobile {
@@ -811,6 +870,7 @@ $column-gap: 0.75rem !default;
     &:not(.is-desktop) {
       display: flex;
     }
+
   }
 
   @include desktop() {
@@ -818,8 +878,14 @@ $column-gap: 0.75rem !default;
     &--desktop {
       display: flex;
     }
+
   }
+
 }
+
+
+/* Column Gap Variables
+   ========================================================================== */
 
 .columns.columns--variable {
   --columnGap: 0.75rem;
@@ -836,5 +902,7 @@ $column-gap: 0.75rem !default;
     .columns--#{$i} {
       --columnGap: $i * 0.25rem;
     }
+
   }
+
 }

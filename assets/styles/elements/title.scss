@@ -25,6 +25,7 @@ $subtitle-strong-weight: $weight-semibold !default;
   }
 }
 
+
 /* Title
    ========================================================================== */
 
@@ -43,6 +44,7 @@ $subtitle-strong-weight: $weight-semibold !default;
     margin-top: -1.5rem;
   }
 
+
   /* Title Sizes
      ========================================================================== */
 
@@ -56,6 +58,7 @@ $subtitle-strong-weight: $weight-semibold !default;
   }
 
 }
+
 
 /* Subtitle
    ========================================================================== */
@@ -75,18 +78,22 @@ $subtitle-strong-weight: $weight-semibold !default;
     margin-top: -1.5rem;
   }
 
+
   /* Subtitle Sizes
      ========================================================================== */
 
   @each $size in $sizes {
+
     $i: index($sizes, $size);
 
     &__#{$i} {
       font-size: $size;
     }
+
   }
 
 }
+
 
 /* Heading
    ========================================================================== */

@@ -1,0 +1,69 @@
+/* ==========================================================================
+   #DIVIDER
+   ========================================================================== */
+
+$divider-background-color: $grey-lighter !default;
+$divider-font-size: $size-7 !default;
+$divider-color: $grey-light !default;
+
+.divider {
+  display: block;
+  position: relative;
+
+
+  /* Divider Content
+     ========================================================================== */
+
+  &[data-content]:after {
+    background: $white;
+    color: $divider-color;
+    content: attr(data-content);
+    display: inline-block;
+    font-size: $divider-font-size;
+    padding: 0.5rem 0.8rem;
+    transform: translateY(-1.1rem);
+    text-align: center;
+  }
+
+
+  /* Horizontal / Default Divider
+     ========================================================================== */
+
+  &:not(.divider--vertical) {
+    border-top: 0.1rem solid $divider-background-color;
+    height: 0.1rem;
+    margin: 2rem 0;
+    text-align: center;
+  }
+
+
+  /* Vertical Divider
+     ========================================================================== */
+
+  &.divider--vertical {
+    display: block;
+    padding: 2rem;
+    position: relative;
+
+    &:before {
+      border-left: 0.1rem solid $divider-background-color;
+      bottom: 1rem;
+      content: '';
+      display: block;
+      left: 50%;
+      position: absolute;
+      top: 1rem;
+      transform: translateX(-50%);
+    }
+
+    &[data-content]:after {
+      left: 50%;
+      padding: 0.4rem 0;
+      position: relative;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+  }
+
+}

@@ -10,7 +10,7 @@
   $i: index($sizes, $size);
 
   .text--#{$i} {
-    font-size: $size;
+    font-size: $size !important;
   }
 
 }
@@ -24,7 +24,122 @@
   $color: nth($pair, 1);
 
   .text--#{$name} {
-    color: $color;
+    color: $color !important;
   }
 
+  a.text--#{$name} {
+
+    &:hover,
+    &:focus {
+      color: darken($color, 10%) !important;
+    }
+
+  }
+
+}
+
+
+/* Text Transform
+   ========================================================================== */
+
+.text--capitalized {
+  text-transform: capitalize !important;
+}
+
+.text--lowercase {
+  text-transform: lowercase !important;
+}
+
+.text--uppercase {
+  text-transform: uppercase !important;
+}
+
+/* Text Weight
+   ========================================================================== */
+
+.text--light {
+  font-weight: $weight-light !important;
+}
+
+.text--normal {
+  font-weight: $weight-normal !important;
+}
+
+.text--semibold {
+  font-weight: $weight-semibold !important;
+}
+
+.text--bold {
+  font-weight: $weight-bold !important;
+}
+
+
+/* Hidden
+   ========================================================================== */
+
+.hidden {
+  display: none !important;
+}
+
+@include mobile() {
+
+  .hidden--mobile {
+    display: none !important;
+  }
+}
+
+@include tablet() {
+
+  .hidden--tablet {
+    display: none !important;
+  }
+}
+
+@include tablet-only() {
+
+  .hidden--tablet-only {
+    display: none !important;
+  }
+}
+
+@include touch() {
+
+  .hidden--touch {
+    display: none !important;
+  }
+}
+
+@include desktop() {
+
+  .hidden--desktop {
+    display: none !important;
+  }
+}
+
+@include desktop-only() {
+
+  .hidden--desktop-only {
+    display: none !important;
+  }
+}
+
+@include widescreen() {
+
+  .hidden--widescreen {
+    display: none !important;
+  }
+}
+
+@include widescreen-only() {
+
+  .hidden--widescreen-only {
+    display: none !important;
+  }
+}
+
+@include fullhd() {
+
+  .hidden--fullhd {
+    display: none !important;
+  }
 }

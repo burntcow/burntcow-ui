@@ -8,6 +8,11 @@
 @import 'config/variables';
 @import 'config/external';
 
+// Utilities
+@import 'utilities/control';
+@import 'utilities/hamburger';
+@import 'utilities/mq';
+
 // Common
 @import 'common/global';
 @import 'common/helpers';
@@ -15,6 +20,7 @@
 
 // Elements
 @import 'elements/content';
+@import 'elements/divider';
 @import 'elements/icon';
 @import 'elements/notification';
 @import 'elements/table';
@@ -22,9 +28,11 @@
 
 // Components
 @import 'components/accordion';
+@import 'components/breadcrumb';
 @import 'components/button';
 @import 'components/card';
 @import 'components/navbar';
+@import 'components/pagination';
 @import 'components/tabs';
 
 // Grid

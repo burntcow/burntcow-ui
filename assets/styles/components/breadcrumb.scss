@@ -1,0 +1,126 @@
+/* ==========================================================================
+   #BREADCRUMB
+   ========================================================================== */
+
+$breadcrumb-item-color: $link !default;
+$breadcrumb-item-hover-color: $link-hover !default;
+$breadcrumb-item-active-color: $text-strong !default;
+$breadcrumb-item-seperator: '\0002f' !default;
+$breadcrumb-item-separator-color: $text !default;
+
+.breadcrumb {
+  @include block();
+  @include unselectable();
+  align-items: stretch;
+  display: flex;
+  font-size: $size-normal;
+  overflow: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+
+
+  /* Breadcrumb Links
+     ========================================================================== */
+
+  a {
+    align-items: center;
+    color: $breadcrumb-item-color;
+    display: flex;
+    justify-content: center;
+    padding: 0.5em 0.75em;
+
+    &:hover {
+      color: $breadcrumb-item-hover-color;
+    }
+  }
+
+
+  /* Breadcrumb List
+     ========================================================================== */
+
+  ul, ol {
+    align-items: center;
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 0;
+    justify-content: flex-start;
+  }
+
+
+  /* Breadcrumb List Items
+     ========================================================================== */
+
+  li {
+    align-items: center;
+    display: flex;
+
+    &:first-child a {
+      padding-left: 0;
+    }
+
+    &.is-active a {
+      color: $breadcrumb-item-active-color;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    + li:before {
+      color: $breadcrumb-item-separator-color;
+      content: $breadcrumb-item-seperator;
+    }
+
+  }
+
+
+  /* Breadcrumb Icons
+     ========================================================================== */
+
+  .icon {
+
+    &:first-child {
+      margin-right: 0.5em;
+    }
+
+    &:last-child {
+      margin-left: 0.5em;
+    }
+
+  }
+
+
+  /* Breadcrumb List Alignment
+     ========================================================================== */
+
+  &--centered {
+
+    ol, ul {
+      justify-content: center;
+    }
+
+  }
+
+  &--right {
+
+    ol, ul {
+      justify-content: flex-end;
+    }
+
+  }
+
+
+  /* Breadcrumb List Size
+     ========================================================================== */
+
+  &--small {
+    font-size: $size-small;
+  }
+
+  &--medium {
+    font-size: $size-medium;
+  }
+
+  &--large {
+    font-size: $size-large;
+  }
+
+}

@@ -73,6 +73,7 @@ $content-table-foot-cell-color: $text-strong !default;
     &:not(:first-child) {
       margin-top: 1em;
     }
+
   }
 
   h2 {
@@ -82,6 +83,7 @@ $content-table-foot-cell-color: $text-strong !default;
     &:not(:first-child) {
       margin-top: 1.1428em;
     }
+
   }
 
   h3 {
@@ -91,6 +93,7 @@ $content-table-foot-cell-color: $text-strong !default;
     &:not(:first-child) {
       margin-top: 1.3333em;
     }
+
   }
 
   h4 {
@@ -263,15 +266,15 @@ $content-table-foot-cell-color: $text-strong !default;
   /* Content Sizes
      ========================================================================== */
 
-  &__small {
+  &--small {
     font-size: $size-small;
   }
 
-  &__medium {
+  &--medium {
     font-size: $size-medium;
   }
 
-  &__large {
+  &--large {
     font-size: $size-large;
   }
 }
