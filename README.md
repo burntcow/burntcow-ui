@@ -19,3 +19,10 @@ Usage will be updated once further in development.
 $ git clone https://github.com/burntcow/burntcow-ui && cd burntcow-ui 
 $ yarn && yarn run build && yarn run start
 ```
+
+### Documentation 
+```sh 
+$ yarn global add @frctl/fractal
+$ cd docs && yarn
+$ fractal start --sync
+```

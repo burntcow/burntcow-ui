@@ -1,0 +1,6 @@
+title: Hero
+context:
+    title: Welcome
+    subtitle: Here lives a framework <strong>built with love</strong> for Burntcow projects.
+    color: primary
+    size: medium

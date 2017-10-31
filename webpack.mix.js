@@ -19,15 +19,15 @@ const dist   = 'dist';
 
 mix.setPublicPath(dist)
    .setResourceRoot('../');
-   
+
 // Assets
 mix.sass(`${assets}/styles/main.scss`, `${dist}/styles`)
    .js(`${assets}/scripts/main.js`, `${dist}/scripts`)
    .extract([
      'micromodal/dist/micromodal'
    ]);
-   
-// Plugins 
+
+// Plugins
 mix.webpackConfig({
   plugins: [
     new ImageminPlugin({
@@ -35,18 +35,19 @@ mix.webpackConfig({
         quality: '95-100'
       },
       test: /\.(jpe?g|png|gif|svg)$/i
-    }),
-    
-    // new PrettierPlugin()
+    })
   ]
 });
 
+// Documentation
+mix.copyDirectory('dist/', 'docs/public');
+
 // Source maps when not in production.
 if (!mix.inProduction()) {
-  //mix.sourceMaps();
+  // mix.sourceMaps();
 }
 
 // Hash and version files in production.
 if (mix.inProduction()) {
-  //mix.version();
+  // mix.version();
 }
