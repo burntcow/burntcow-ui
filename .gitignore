@@ -1,6 +1,9 @@
 # Application
 dist
 
+# Documentation
+docs/public
+
 # Node Package Manager
 node_modules
 
