@@ -158,7 +158,7 @@ $button-static-border-color: $grey-lighter !default;
         box-shadow: none;
       }
 
-      &--inverted {
+      &.button--inverted {
         background-color: $color-invert;
         color: $color;
 
@@ -174,7 +174,7 @@ $button-static-border-color: $grey-lighter !default;
         }
       }
 
-      &--outlined {
+      &.button--outlined {
         background-color: transparent;
         border-color: $color;
         color: $color;

@@ -32,7 +32,7 @@ $ fractal start --sync
 
 ## Resources
 
-Burntcow UI was inspired by multiple different libraries.
+Burntcow UI takes inspiration from a couple notable resources:
 
 * [Bulma]
 * [Inuit]
