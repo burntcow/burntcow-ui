@@ -2,7 +2,7 @@
 dist
 
 # Documentation
-docs/public
+docs/public/**/*
 !docs/public/.gitkeep
 
 # Node Package Manager
