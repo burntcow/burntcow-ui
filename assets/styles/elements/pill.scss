@@ -55,6 +55,7 @@ $pill-radius: $radius !default;
     ========================================================================== */
 
  @each $name, $pair in $colors {
+
    $color: nth($pair, 1);
    $color-invert: nth($pair, 2);
 
@@ -62,6 +63,7 @@ $pill-radius: $radius !default;
      background-color: $color;
      color: $color-invert;
    }
+
  }
 
 
