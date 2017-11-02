@@ -78,7 +78,7 @@ $table-striped-row-even-hover-background-color: $white-ter !default;
 
   tr {
 
-    &.is-selected {
+    &.is-active {
       background-color: $table-row-active-background-color;
       color: $table-row-active-color;
 
