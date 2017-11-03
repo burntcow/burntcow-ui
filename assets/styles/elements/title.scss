@@ -23,6 +23,7 @@ $subtitle-strong-weight: $weight-semibold !default;
   span {
     font-weight: inherit;
   }
+
 }
 
 
@@ -83,10 +84,9 @@ $subtitle-strong-weight: $weight-semibold !default;
      ========================================================================== */
 
   @each $size in $sizes {
-
     $i: index($sizes, $size);
 
-    &__#{$i} {
+    &--#{$i} {
       font-size: $size;
     }
 
