@@ -5,7 +5,7 @@
 $control-radius: $radius !default;
 $control-radius-small: $radius-small !default;
 $control-padding-y: calc(0.375em - 1px) !default;
-$control-padding-x: calc(0.625em - 1px) !default;
+$control-padding-x: calc(1.25em - 1px) !default;
 
 @mixin control() {
   -moz-appearance: none;
@@ -19,7 +19,7 @@ $control-padding-x: calc(0.625em - 1px) !default;
   justify-content: flex-start;
   padding: $control-padding-y $control-padding-x;
   position: relative;
-  vertical-align: top;
+  vertical-align: middle;
 
 
   /* Control States
