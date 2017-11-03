@@ -36,12 +36,15 @@
         strong {
           color: $color-invert;
         }
+
       }
 
       .navbar__menu {
+
         @include touch() {
           background-color: $color;
         }
+
       }
 
       .navbar__item,
