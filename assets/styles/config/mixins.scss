@@ -9,11 +9,11 @@
 //   @include overlay();
 // }
 @mixin overlay() {
-    position: absolute;
-    top: $offset;
-    right: $offset;
-    bottom: $offset;
-    left: $offset;
+  position: absolute;
+  top: $offset;
+  right: $offset;
+  bottom: $offset;
+  left: $offset;
 }
 
 
