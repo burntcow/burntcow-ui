@@ -182,6 +182,7 @@ $navbar-divider-background-color: $border !default;
     background-color: $navbar-item-hover-background-color;
     color: $navbar-item-hover-color;
   }
+
 }
 
 .navbar__item a:not(.button) {
@@ -288,7 +289,7 @@ $navbar-divider-background-color: $border !default;
       .navbar__item.navbar__dropdown {
 
         &.is-active,
-        &.is-hoverable:hover {
+        &:hover {
 
           .navbar__link {
             background-color: transparent !important;
@@ -346,7 +347,7 @@ $navbar-divider-background-color: $border !default;
     }
 
     &.is-active,
-    &.is-hoverable:hover {
+    &:hover {
 
       .navbar__dropdown {
         display: block;

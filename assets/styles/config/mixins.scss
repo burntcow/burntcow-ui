@@ -2,6 +2,21 @@
 //   #MIXINS
 //   ========================================================================== */
 
+// Mixin to easily apply an overlay to an
+// element.
+//
+// .usage {
+//   @include overlay();
+// }
+@mixin overlay() {
+    position: absolute;
+    top: $offset;
+    right: $offset;
+    bottom: $offset;
+    left: $offset;
+}
+
+
 // Mixin to give a sane default margin to blocks
 // that are not the last-child in a container.
 //
