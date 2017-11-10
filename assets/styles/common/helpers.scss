@@ -37,6 +37,72 @@
 }
 
 
+/* Text Alignment
+   ========================================================================== */
+
+$alignments: ('centered': 'center', 'justified': 'justify', 'left': 'left', 'right': 'right');
+
+@each $alignment, $text-align in $alignments {
+  .text--#{$alignment} {
+    text-align: #{$text-align} !important;
+  }
+
+  @include mobile() {
+    .text--#{$alignment}-mobile {
+      text-align: #{$text-align} !important;
+    }
+  }
+
+  @include tablet() {
+    .text--#{$alignment}-tablet {
+      text-align: #{$text-align} !important;
+    }
+  }
+
+  @include tablet-only() {
+    .text--#{$alignment}-tablet-only {
+      text-align: #{$text-align} !important;
+    }
+  }
+
+  @include touch() {
+    .text--#{$alignment}-touch {
+      text-align: #{$text-align} !important;
+    }
+  }
+
+  @include desktop() {
+    .text--#{$alignment}-desktop {
+      text-align: #{$text-align} !important;
+    }
+  }
+
+  @include desktop-only() {
+    .text--#{$alignment}-desktop-only {
+      text-align: #{$text-align} !important;
+    }
+  }
+
+  @include widescreen() {
+    .text--#{$alignment}-widescreen {
+      text-align: #{$text-align} !important;
+    }
+  }
+
+  @include widescreen-only() {
+    .text--#{$alignment}-widescreen-only {
+      text-align: #{$text-align} !important;
+    }
+  }
+
+  @include fullhd() {
+    .text--#{$alignment}-fullhd {
+      text-align: #{$text-align} !important;
+    }
+  }
+}
+
+
 /* Text Transform
    ========================================================================== */
 
