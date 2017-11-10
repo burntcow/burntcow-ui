@@ -5,7 +5,6 @@
 $button-color: $grey-darker !default;
 $button-background-color: $white !default;
 $button-border-color: $grey-lighter !default;
-$button-cursor: default !default;
 
 $button-hover-color: $link-hover !default;
 $button-hover-border-color: $link-hover-border !default;
@@ -41,7 +40,6 @@ $button-static-border-color: $grey-lighter !default;
   background-color: $button-background-color;
   border-color: $button-border-color;
   color: $button-color;
-  cursor: $button-cursor;
   justify-content: center;
   text-align: center;
   white-space: nowrap;
