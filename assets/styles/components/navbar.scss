@@ -44,6 +44,7 @@ $navbar-divider-background-color: $border !default;
 
       .navbar__brand {
 
+        a.navbar__item,
         .navbar__item a:not(.button),
         .navbar__link {
           color: $color-invert;
