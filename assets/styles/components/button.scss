@@ -66,6 +66,7 @@ $button-static-border-color: $grey-lighter !default;
     &:not(:active) {
       box-shadow: $button-focus-box-shadow-size $button-focus-box-shadow-color;
     }
+
   }
 
   &:active,
@@ -103,6 +104,7 @@ $button-static-border-color: $grey-lighter !default;
       border-color: transparent;
       box-shadow: none;
     }
+
   }
 
 
@@ -256,5 +258,7 @@ $button-static-border-color: $grey-lighter !default;
       @include center(1em);
       position: absolute !important;
     }
+
   }
+
 }
