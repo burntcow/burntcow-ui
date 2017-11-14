@@ -44,7 +44,7 @@ $navbar-divider-background-color: $border !default;
 
       .navbar__brand {
 
-        a.navbar__item,
+        .navbar__item,
         .navbar__item a:not(.button),
         .navbar__link {
           color: $color-invert;
@@ -71,6 +71,7 @@ $navbar-divider-background-color: $border !default;
         .navbar__start,
         .navbar__end {
 
+          .navbar__item,
           .navbar__item a:not(.button),
           .navbar__link {
             color: $color-invert;
@@ -170,6 +171,7 @@ $navbar-divider-background-color: $border !default;
 /* Navbar Item
    ========================================================================== */
 
+.navbar__item,
 .navbar__item a:not(.button),
 .navbar__link {
   color: $navbar-item-color;
@@ -186,6 +188,7 @@ $navbar-divider-background-color: $border !default;
 
 }
 
+.navbar__item,
 .navbar__item a:not(.button) {
   flex-grow: 0;
   flex-shrink: 0;
@@ -214,6 +217,7 @@ $navbar-divider-background-color: $border !default;
   padding-bottom: 0.5rem;
   padding-top: 0.5rem;
 
+  .navbar__item,
   .navbar__item a:not(.button) {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -242,6 +246,7 @@ $navbar-divider-background-color: $border !default;
   .navbar__brand,
   .navbar__tabs {
 
+    .navbar__item,
     .navbar__item a:not(.button) {
       align-items: center;
       display: flex;
@@ -278,6 +283,7 @@ $navbar-divider-background-color: $border !default;
     &--transparent {
 
       .navbar__item,
+      .navbar__item a,
       .navbar__link {
 
         &:hover,
@@ -326,13 +332,15 @@ $navbar-divider-background-color: $border !default;
     display: none;
   }
 
+  .navbar__item,
   .navbar__item a:not(.button),
   .navbar__link {
     align-items: center;
     display: flex;
   }
 
-  .navbar__item {
+  .navbar__item,
+  .navbar__item a:not(.button) {
 
     &.navbar__dropdown {
       align-items: stretch;
@@ -457,6 +465,7 @@ $navbar-divider-background-color: $border !default;
      ========================================================================== */
 
   .navbar__item,
+  .navbar__item a:not(.button),
   .navbar__link {
 
     &.is-active {

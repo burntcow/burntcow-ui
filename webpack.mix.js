@@ -44,10 +44,10 @@ mix.copyDirectory('dist/', 'docs/public');
 
 // Source maps when not in production.
 if (!mix.inProduction()) {
-  // mix.sourceMaps();
+  mix.sourceMaps();
 }
 
 // Hash and version files in production.
 if (mix.inProduction()) {
-  // mix.version();
+  mix.version();
 }
