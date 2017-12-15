@@ -23,7 +23,7 @@
     background-repeat: no-repeat;
 
     .hero__body {
-      text-shadow: 0 1px $trim-darker;
+      text-shadow: 0 1px rgba($trim-darker, 0.5);
 
       .icon {
         text-shadow: none;
