@@ -23,6 +23,12 @@
 
   .text--#{$name} {
     color: $color !important;
+
+    .title,
+    .subtitle {
+      color: $color !important;
+    }
+
   }
 
   a.text--#{$name} {
