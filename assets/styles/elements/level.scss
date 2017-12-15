@@ -1,0 +1,145 @@
+/* ==========================================================================
+   #LEVEL
+   ========================================================================== */
+
+.level {
+  @include block();
+  align-items: center;
+  justify-content: space-between;
+
+
+  /* Code styles
+  ========================================================================== */
+  code {
+    border-radius: $radius;
+  }
+
+
+  /* Image styles
+  ========================================================================== */
+  img {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+
+  /* Modifiers
+  ========================================================================== */
+  &--mobile {
+    display: flex;
+
+    .level__left,
+    .level__right {
+      display: flex;
+    }
+
+    .level__left + .level__right {
+      margin-top: 0;
+    }
+
+    .level__item {
+      &:not(:last-child) {
+        margin-bottom: 0;
+      }
+
+      &:not(.level--narrow) {
+        flex-grow: 1;
+      }
+
+      margin-right: 0.75rem;
+    }
+
+  }
+
+
+  /* Responsive
+  ========================================================================== */
+  @include tablet() {
+    display: flex;
+
+    & > .level__item:not(.level--narrow) {
+      flex-grow: 1;
+    }
+
+  }
+
+}
+
+
+/* Level Item
+========================================================================== */
+.level__item {
+  align-items: center;
+  display: flex;
+  flex-basis: auto;
+  flex-grow: 0;
+  flex-shrink: 0;
+  justify-content: center;
+
+  .title,
+  .subtitle {
+    margin-bottom: 0;
+  }
+
+  @include mobile() {
+
+    &:not(:last-child) {
+      margin-bottom: 0.75rem;
+    }
+
+  }
+
+}
+
+.level-left,
+.level-right {
+  flex-basis: auto;
+  flex-grow: 0;
+  flex-shrink: 0;
+
+  .level-item {
+    &.level--flexible {
+      flex-grow: 1;
+    }
+
+    @include tablet() {
+      &:not(:last-child) {
+        margin-right: 0.75rem;
+      }
+
+    }
+
+  }
+
+}
+
+
+/* Level Level
+========================================================================== */
+.level__left {
+  align-items: center;
+  justify-content: flex-start;
+
+  @include mobile() {
+    & + .level__right {
+      margin-top: 1.5rem;
+    }
+  }
+
+  @include tablet() {
+    display: flex;
+  }
+}
+
+
+/* Level Right
+========================================================================== */
+.level__right {
+  align-items: center;
+  justify-content: flex-end;
+
+  @include tablet() {
+    display: flex;
+  }
+
+}
