@@ -5,6 +5,23 @@
 .container {
   margin: 0 auto;
   position: relative;
+  padding: 0 1rem;
+
+
+  /* Container Modifiers
+     ========================================================================== */
+
+  &--narrow {
+    max-width: 70em !important;
+
+    &-medium {
+      max-width: 60em !important;
+    }
+
+    &-small {
+      max-width: 50em !important;
+    }
+  }
 
 
   /* Desktop Container
