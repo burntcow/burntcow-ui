@@ -15,6 +15,24 @@
 
   /* Hero Modifiers
   ========================================================================== */
+
+  &--cover {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    .hero__body {
+      text-shadow: 0 1px $trim-darker;
+
+      .icon {
+        text-shadow: none;
+      }
+
+    }
+
+  }
+
   &--overlay {
     &:after {
       content: '';
