@@ -1,0 +1,692 @@
+/* ==========================================================================
+   #FORM
+   ========================================================================== */
+
+$input-color: $grey-darker !default;
+$input-background-color: $white !default;
+$input-border-color: $grey-lighter !default;
+$input-shadow: inset 0 1px 2px rgba($black, 0.1) !default;
+
+$input-hover-color: $grey-darker !default;
+$input-hover-border-color: $grey-light !default;
+
+$input-focus-color: $grey-darker !default;
+$input-focus-border-color: $link !default;
+$input-focus-box-shadow-size: 0 0 0 0.125em !default;
+$input-focus-box-shadow-color: rgba($link, 0.25) !default;
+
+$input-disabled-color: $text-light !default;
+$input-disabled-background-color: $background !default;
+$input-disabled-border-color: $background !default;
+
+$input-arrow: $link !default;
+
+$input-icon-color: $grey-lighter !default;
+$input-icon-active-color: $grey !default;
+
+$input-radius: $radius !default;
+
+$label-color: $grey-darker !default;
+$label-weight: $weight-bold !default;
+
+$help-size: $size-small !default;
+
+
+/* Input / Textarea
+========================================================================== */
+
+.input,
+.textarea {
+  @include control();
+  background-color: $input-background-color;
+  border-color: $input-border-color;
+  color: $input-color;
+  box-shadow: $input-shadow;
+  max-width: 100%;
+  width: 100%;
+
+
+  /* Input / Textarea Placeholder
+  ========================================================================== */
+
+  @include placeholder() {
+    color: rgba($input-color, 0.3);
+  }
+
+
+  /* Input / Textarea States
+  ========================================================================== */
+
+  &:hover,
+  &.is-hovered {
+    border-color: $input-hover-border-color;
+  }
+
+  &:focus,
+  &.is-focused,
+  &:active,
+  &.is-active {
+    border-color: $input-focus-border-color;
+    box-shadow: $input-focus-box-shadow-size;
+  }
+
+  &[disabled] {
+    background-color: $input-disabled-background-color;
+    border-color: $input-disabled-border-color;
+    box-shadow: none;
+    color: $input-disabled-color;
+
+    @include placeholder() {
+      color: rgba($input-disabled-color, 0.3);
+    }
+
+  }
+
+  &[readonly] {
+    box-shadow: none;
+  }
+
+
+  /* Input / Textarea Colors
+  ========================================================================== */
+
+  @each $name, $pair in $colors {
+    $color: nth($pair, 1);
+
+    &--#{$name} {
+      border-color: $color;
+
+      &:focus,
+      &.is-focused,
+      &:active,
+      &.is-active {
+        box-shadow: $input-focus-box-shadow-size rgba($color, 0.25);
+      }
+
+    }
+
+  }
+
+
+  /* Input / Textarea Sizes
+  ========================================================================== */
+
+  &--small {
+    @include control-small();
+  }
+
+  &--medium {
+    @include control-medium();
+  }
+
+  &--large {
+    @include control-large();
+  }
+
+
+  /* Input / Textarea Modifiers
+  ========================================================================== */
+
+  &--fullwidth {
+    display: block;
+    width: 100%;
+  }
+
+  &--inline {
+    display: inline;
+  }
+
+  &--rounded {
+    border-radius: $radius-rounded;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+  &--static {
+    background-color: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+}
+
+
+/* Text Area
+========================================================================== */
+
+.textarea {
+  display: block;
+  max-width: 100%;
+  min-width: 100%;
+  padding: 0.625em;
+  resize: vertical;
+
+
+  /* Textarea States
+  ========================================================================== */
+
+  &:not([rows]) {
+    max-height: 600px;
+    min-height: 120px;
+  }
+
+  &[rows] {
+    height: unset;
+  }
+
+
+  /* Textarea Modifiers
+  ========================================================================== */
+
+  &--fixed {
+    resize: none;
+  }
+
+}
+
+
+/* Checkbox / Radio
+========================================================================== */
+
+.checkbox,
+.radio {
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1.25;
+  position: relative;
+
+  input {
+    cursor: pointer;
+  }
+
+
+  /* Checkbox / Radio States
+  ========================================================================== */
+
+  &:hover {
+    color: $input-hover-color;
+  }
+
+  &[disabled] {
+    color: $input-disabled-color;
+    cursor: not-allowed;
+  }
+
+}
+
+
+/* Radio
+========================================================================== */
+
+.radio {
+
+  & + .radio {
+    margin-left: 0.5em;
+  }
+
+}
+
+
+/* Select
+========================================================================== */
+
+.select {
+  display: inline-block;
+  max-width: 100%;
+  position: relative;
+  vertical-align: top;
+
+  &:not(.select--multiple) {
+    height: 2.25em;
+
+    &:after {
+      @include arrow($input-arrow);
+      margin-top: -0.375em;
+      right: 1.125em;
+      top: 50%;
+      z-index: 4;
+    }
+
+  }
+
+
+  /* Select Options
+  ========================================================================== */
+
+  select {
+    cursor: pointer;
+    display: block;
+    font-size: 1em;
+    background-color: $input-background-color;
+    border-color: $input-border-color;
+    color: $input-color;
+    box-shadow: $input-shadow;
+    width: 100%;
+    max-width: 100%;
+    outline: none;
+
+    &:-ms-expand {
+      display: none;
+    }
+
+    &[disabled]:hover {
+      border-color: $input-disabled-border-color;
+    }
+
+    &:not([multiple]) {
+      padding-right: 2.5em;
+    }
+
+    &[multiple] {
+      height: unset;
+      padding: 0;
+
+      option {
+        padding: 0.5em 1em;
+      }
+
+    }
+
+  }
+
+
+  /* Select Modifiers
+  ========================================================================== */
+
+  &--rounded {
+
+    select {
+      border-radius: $radius-rounded;
+      padding-left: 1em;
+    }
+
+  }
+
+
+  /* Select States
+  ========================================================================== */
+
+  &:hover {
+
+    &:after {
+      border-color: $input-hover-color;
+    }
+
+  }
+
+
+  /* Select Colors
+  ========================================================================== */
+
+  @each $name, $pair in $colors {
+    $color: nth($pair, 1);
+
+    &--#{$name} select {
+      border-color: $color;
+
+      &:focus,
+      &.is-focused,
+      &:active,
+      &.is-active {
+        box-shadow: $input-focus-box-shadow-size rgba($color, 0.25);
+      }
+
+    }
+
+  }
+
+
+  /* Select Sizes
+  ========================================================================== */
+
+  &--small {
+    @include control-small();
+  }
+
+  &--medium {
+    @include control-medium();
+  }
+
+  &--large {
+    @include control-large();
+  }
+
+
+  /* Select Modifiers
+  ========================================================================== */
+
+  &--disabled {
+
+    &:after {
+      border-color: $input-disabled-color;
+    }
+
+  }
+
+  &--fullwidth {
+    width: 100%;
+
+    select {
+      width: 100%;
+    }
+
+  }
+
+}
+
+
+/* Label
+========================================================================== */
+
+.label {
+  color: $label-color;
+  display: block;
+  font-size: $size-normal;
+  font-weight: $label-weight;
+
+  &:not(:last-child) {
+    margin-bottom: 0.5em;
+  }
+
+
+  /* Label Sizes
+  ========================================================================== */
+
+  &--small {
+    font-size: $size-small;
+  }
+
+  &--medium {
+    font-size: $size-medium;
+  }
+
+  &--large {
+    font-size: $size-large;
+  }
+
+}
+
+
+/* Help
+========================================================================== */
+
+.help {
+  display: block;
+  font-size: $help-size;
+  margin-top: 0.25rem;
+
+
+  /* Help Colors
+  ========================================================================== */
+
+  @each $name, $pair in $colors {
+    $color: nth($pair, 1);
+
+    &--#{$name} {
+      color: $color;
+    }
+
+  }
+
+}
+
+
+/* Field
+========================================================================== */
+
+.field {
+  &:not(:last-child) {
+    margin-bottom: 0.75rem;
+  }
+
+
+  /* Field Modifiers
+  ========================================================================== */
+
+  &--addons {
+    display: flex;
+    justify-content: flex-start;
+
+    .control {
+
+      &:not(:last-child) {
+        margin-right: -1px;
+      }
+
+      &:not(:first-child):not(:last-child) {
+
+        .button,
+        .input,
+        .select select {
+          border-radius: 0;
+        }
+
+      }
+
+      &:first-child {
+
+        .button,
+        .input,
+        .select select {
+          border-bottom-right-radius: 0;
+          border-top-right-radius: 0;
+        }
+
+      }
+
+      &:last-child {
+
+        .button,
+        .input,
+        .select select {
+          border-bottom-left-radius: 0;
+          border-top-left-radius: 0;
+        }
+
+      }
+
+      .button,
+      .input,
+      .select select {
+
+        &:hover,
+        &.is-hovered {
+          z-index: 2;
+        }
+
+        &:focus,
+        &.is-focused,
+        &:active,
+        &.is-active {
+          z-index: 3;
+
+          &:hover {
+            z-index: 4;
+          }
+
+        }
+
+      }
+
+      &.field--expanded {
+        flex-grow: 1;
+      }
+
+    }
+
+    &-centered {
+      justify-content: center;
+    }
+
+    &-right {
+      justify-content: flex-end;
+    }
+
+    &-fullwidth {
+
+      .control {
+        flex-grow: 1;
+        flex-shrink: 0;
+      }
+
+    }
+
+  }
+
+  &--grouped {
+    display: flex;
+    justify-content: flex-start;
+
+    & > .control {
+      flex-shrink: 0;
+
+      &:not(:last-child) {
+        margin-bottom: 0;
+        margin-right: 0.75rem;
+      }
+
+      &.field--expanded {
+        flex-grow: 1;
+        flex-shrink: 1;
+      }
+
+    }
+
+    &-centered {
+      justify-content: center;
+    }
+
+    &-right {
+      justify-content: flex-end;
+    }
+
+    &-multiline {
+      flex-wrap: wrap;
+
+      & > .control {
+
+        &:last-child,
+        &:not(:last-child) {
+          margin-bottom: 0.75rem;
+        }
+
+      }
+
+      &:last-child {
+        margin-bottom: -0.75rem;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 0;
+      }
+
+    }
+
+  }
+
+  &--horizontal {
+
+    @include tablet() {
+      display: flex;
+    }
+
+  }
+
+}
+
+
+/* Field Label
+========================================================================== */
+
+.field__label {
+
+  .label {
+    font-size: inherit;
+  }
+
+  @include mobile() {
+    margin-bottom: 0.5rem;
+  }
+
+  @include tablet() {
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 0;
+    margin-right: 1.5rem;
+    text-align: right;
+
+
+    /* Field Label Sizes
+    ========================================================================== */
+
+    &--small {
+      font-size: $size-small;
+      padding-top: 0.375em;
+    }
+
+    &--normal {
+      padding-top: 0.375em;
+    }
+
+    &--medium {
+      font-size: $size-medium;
+      padding-top: 0.375em;
+    }
+
+    &--large {
+      font-size: $size-large;
+      padding-top: 0.375em;
+    }
+
+  }
+
+}
+
+
+/* Field Body
+========================================================================== */
+
+.field__body {
+
+  .field .field {
+    margin-bottom: 0;
+  }
+
+  @include tablet() {
+    display: flex;
+    flex-basis: 0;
+    flex-grow: 5;
+    flex-shrink: 1;
+
+    .field {
+      margin-bottom: 0;
+    }
+
+    & > .field {
+      flex-shrink: 1;
+
+      &:not(.field--narrow) {
+        flex-grow: 1;
+      }
+
+      &:not(:last-child) {
+        margin-right: 0.75rem;
+      }
+
+    }
+
+  }
+
+}
+
+
+/* Control
+========================================================================== */
+
+.control {
+  font-size: $size-normal;
+  position: relative;
+  text-align: left;
+}
