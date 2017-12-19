@@ -94,11 +94,3 @@ $subtitle-strong-weight: $weight-semibold !default;
   }
 
 }
-
-
-/* Heading
-   ========================================================================== */
-
-.heading {
-  @include block();
-}
