@@ -17,6 +17,7 @@ $subtitle-strong-weight: $weight-semibold !default;
 .title,
 .subtitle {
   @include block();
+  font-family: $family-heading;
   word-break: break-word;
 
   em,

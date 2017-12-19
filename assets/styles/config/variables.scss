@@ -149,6 +149,7 @@ $fullhd: 1344px + (2 * $gap) !default;
 $body-size: 16px !default;
 
 $family-primary: $family-sans-serif !default;
+$family-heading: $family-primary !default;
 $family-code: $family-monospace !default;
 $render-mode: optimizeLegibility !default;
 
