@@ -204,8 +204,6 @@
     "webpack": "^3.6.0"
   },
   "dependencies": {
-    "micromodal": "^0.1.1",
-    "microtip": "^0.2.2",
     "minireset.css": "^0.0.3"
   }
 }

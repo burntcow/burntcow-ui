@@ -4187,14 +4187,6 @@ micromatch@^2.1.5, micromatch@^2.3.11, micromatch@^2.3.7:
     parse-glob "^3.0.4"
     regex-cache "^0.4.2"
 
-micromodal@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/micromodal/-/micromodal-0.1.1.tgz#d4814810ea43436d33629200fdf6db18ffa62a42"
-
-microtip@^0.2.2:
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/microtip/-/microtip-0.2.2.tgz#9d9d43cbbf6815d6d16a514abc71c17c5b91d1e9"
-
 miller-rabin@^4.0.0:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/miller-rabin/-/miller-rabin-4.0.1.tgz#f080351c865b0dc562a8462966daa53543c78a4d"
