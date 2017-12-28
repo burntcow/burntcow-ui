@@ -22,10 +22,7 @@ mix.setPublicPath(dist)
 
 // Assets
 mix.sass(`${assets}/styles/main.scss`, `${dist}/styles`)
-   .js(`${assets}/scripts/main.js`, `${dist}/scripts`)
-   .extract([
-     'micromodal/dist/micromodal'
-   ]);
+   .js(`${assets}/scripts/main.js`, `${dist}/scripts`);
 
 // Plugins
 mix.webpackConfig({
