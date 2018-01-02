@@ -57,4 +57,16 @@ $nav-link-disabled-color: $gray !default;
 
   }
 
+  &--seperator {
+
+    .nav-item:not(:last-child):after {
+      content: '|';
+      float: right;
+      display: block;
+      color: $grey-dark;
+      margin-left: 0.8em;
+    }
+
+  }
+
 }
