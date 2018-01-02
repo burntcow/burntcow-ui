@@ -2,18 +2,67 @@
    #ACCORDION
    ========================================================================== */
 
+$accordion-spacing: 1.5em !default;
+
+$accordion-title-size: $size-3;
+
+$accordion-icon-color: $primary !default;
+$accordion-icon-open: 'data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2213%22%20height%3D%2213%22%20viewBox%3D%220%200%2013%2013%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Crect%20fill%3D%22#000%22%20width%3D%2213%22%20height%3D%221%22%20x%3D%220%22%20y%3D%226%22%3E%3C%2Frect%3E%0A%3C%2Fsvg%3E' !default;
+$accordion-icon-close: 'data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2213%22%20height%3D%2213%22%20viewBox%3D%220%200%2013%2013%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Crect%20fill%3D%22#000%22%20width%3D%2213%22%20height%3D%221%22%20x%3D%220%22%20y%3D%226%22%3E%3C%2Frect%3E%0A%20%20%20%20%3Crect%20fill%3D%22#000%22%20width%3D%221%22%20height%3D%2213%22%20x%3D%226%22%20y%3D%220%22%3E%3C%2Frect%3E%0A%3C%2Fsvg%3E' !default;
+
+
 .accordion {
+  padding: 0;
+  list-style: none;
 
-}
+  &:not(:last-child) {
+    margin-top: $accordion-spacing;
+  }
 
-.accordion__header {
 
-}
+  /* Accordion States
+    ========================================================================== */
 
-.accordion__toggle {
+  &.is-active {
 
-}
+    .accordion__title {
 
-.accordion__body {
+      &:after {
+        background-image: $accordion-icon-open;
+      }
+
+    }
+
+  }
+
+
+  /* Accordion Title
+    ========================================================================== */
+
+  .accordion__title {
+    margin: 0;
+    font-size: $accordion-title-size;
+    cursor: pointer;
+    overflow: hidden;
+
+    &:after {
+      content: '';
+      width: 1em;
+      height: 1em;
+      float: right;
+      background-image: $accordion-icon-close;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+    }
+
+  }
+
+
+  /* Accordion Content
+      ========================================================================== */
+
+  .accordion__content {
+    margin-top: $accordion-spacing;
+  }
 
 }
