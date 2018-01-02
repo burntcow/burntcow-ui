@@ -1,0 +1,60 @@
+/* ==========================================================================
+   #NAV
+   ========================================================================== */
+
+$nav-link-padding-y: 0.5rem !default;
+$nav-link-padding-x: 1rem !default;
+$nav-link-disabled-color: $gray !default;
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+
+
+  /* Nav Link
+   ========================================================================== */
+
+  .nav-link {
+    display: block;
+    padding: $nav-link-padding-y $nav-link-padding-x;
+
+    &:hover,
+    &.is-hovered,
+    &:focus,
+    &.is-focused {
+      text-decoration: none;
+    }
+
+    &.is-disabled {
+      color: $nav-link-disabled-color;
+    }
+
+  }
+
+
+  /* Nav Modifiers
+   ========================================================================== */
+
+  &--fill {
+
+    .nav-item {
+      flex: 1 1 auto;
+      text-align: center;
+    }
+
+  }
+
+  &--justified {
+
+    .nav-item {
+      flex-basis: 0;
+      flex-grow: 1;
+      text-align: center;
+    }
+
+  }
+
+}
