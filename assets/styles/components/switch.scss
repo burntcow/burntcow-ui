@@ -2,6 +2,225 @@
    #SWITCH
    ========================================================================== */
 
-.switch {
+$switch-background: $grey-light !default;
+$switch-border: 0.1rem solid transparent !default;
+$switch-background-active: $primary !default;
+$switch-radius: $radius !default;
+$switch-paddle-background: $white !default;
+$switch-paddle-background-active: $primary !default;
+$switch-paddle-offset: 0.25rem !default;
+$switch-paddle-transition: all 0.25s ease-out !default;
+
+
+/* Switch Mixin
+   ========================================================================== */
+
+@mixin switch($size) {
+  $switch-height: $size * 1.5;
+  $switch-width: $switch-height * 2;
+  $paddle-height: $switch-height - ($switch-paddle-offset * 2);
+  $paddle-width: $switch-height - ($switch-paddle-offset * 2);
+  $paddle-active-offest: $switch-width - $paddle-width - ($switch-paddle-offset * 1.5);
+
+  /* Label
+   ========================================================================== */
+
+  + label {
+    position: relative;
+    display: initial;
+    font-size: $size;
+    line-height: initial;
+    padding-left: $switch-width + 0.5;
+    padding-top: 0.2rem;
+    cursor: pointer;
+
+    &:before {
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      width: $switch-width;
+      height: $switch-height;
+      border: $switch-border;
+      border-radius: $switch-radius;
+      background: $switch-background;
+      content: '';
+    }
+
+    &:after {
+      display: block;
+      position: absolute;
+      top: ($switch-height / 2) - ($paddle-height / 2);
+      left: $switch-paddle-offset;
+      width: $paddle-width;
+      height: $paddle-height;
+      transform: translate3d(0, 0, 0);
+      border-radius: $switch-radius;
+      background: $switch-paddle-background;
+      transition: $switch-paddle-transition;
+      content: '';
+    }
+
+  }
+
+  &:checked + label {
+
+    &:before {
+      background: $switch-background-active;
+    }
+
+    &:after {
+      left: $paddle-active-offest;
+    }
+
+  }
+
+
+  /* Switch Modifiers
+   ========================================================================== */
+
+  &--outlined + label {
+
+    &:before {
+      background-color: transparent;
+      border-color: $switch-background;
+    }
+
+    &:after {
+      background: $switch-background;
+    }
+
+
+    &:checked + label {
+
+      &:before {
+        background-color: transparent;
+        border-color: $switch-background-active;
+      }
+
+      &:after {
+        background: $switch-paddle-background-active;
+      }
+
+    }
+
+  }
+
+  &--thin + label {
+
+    &:before {
+      top: $switch-height / 2.75;
+      height: $switch-height / 4;
+    }
+
+    &:after {
+      box-shadow: 0px 0px 3px $grey;
+    }
+
+  }
+
+  &--rounded + label {
+
+    &:before {
+      border-radius: $radius-large * 4;
+    }
+
+    &:after {
+      border-radius: 50%;
+    }
+
+  }
+
+}
+
+
+/* Switch
+   ========================================================================== */
+
+.switch[type="checkbox"] {
+  @include switch($size-normal);
+  outline: 0;
+  user-select: none;
+  display: inline-block;
+  position: absolute;
+  opacity: 0;
+
+
+  /* Switch States
+   ========================================================================== */
+
+  &[disabled] {
+    cursor: not-allowed;
+
+    + label {
+      opacity: 0.5;
+
+      &:before {
+        opacity: 0.5;
+      }
+
+      &:after {
+        opacity: 0.5;
+      }
+
+      &:hover {
+        cursor: not-allowed;
+      }
+
+    }
+
+  }
+
+
+  /* Switch Colors
+   ========================================================================== */
+
+  &--small {
+    @include switch($size-small);
+  }
+
+  &---medium {
+    @include switch($size-medium);
+  }
+
+  &--large {
+    @include switch($size-large);
+  }
+
+
+  /* Switch Colors
+   ========================================================================== */
+
+  @each $name, $pair in $colors {
+    $color: nth($pair, 1);
+    $color-invert: nth($pair, 2);
+
+    &--#{$name}:checked + label:before {
+      background: $color;
+
+      &.switch--outlined:checked + label {
+
+        &:before {
+          background-color: transparent;
+          border-color: $color !important;
+        }
+
+        &:after {
+          background: $color;
+        }
+
+      }
+
+      &.switched--thin {
+
+        &.switch--outlined + label:after {
+          box-shadow: none;
+        }
+
+      }
+
+    }
+
+  }
 
 }
