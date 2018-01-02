@@ -108,6 +108,61 @@ $button-static-border-color: $grey-lighter !default;
   }
 
 
+  /* Button Styles
+    ========================================================================== */
+
+  &--ribbon {
+    border: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    &:before,
+    &:after {
+      content: '';
+      width: 3px;
+      top: 0;
+      position: absolute;
+      display: block;
+      border: 17px solid $button-background-color;
+    }
+
+    &:before {
+      left: -16px;
+      border-right-width: 8px;
+      border-left-color: transparent;
+      border-left-width: 12px;
+    }
+
+    &:after {
+      right: -16px;
+      border-left-width: 8px;
+      border-right-color: transparent;
+      border-right-width: 12px;
+    }
+
+    &:hover,
+    &.is-hovered,
+    &:focus,
+    &.is-focused {
+
+      &:before,
+      &:after {
+        border-color: darken($button-background-color, 2.5%);
+      }
+
+      &:before {
+        border-left-color: transparent;
+      }
+
+      &:after {
+        border-right-color: transparent;
+      }
+
+    }
+
+  }
+
+
   /* Button Colors
      ========================================================================== */
 
@@ -142,6 +197,43 @@ $button-static-border-color: $grey-lighter !default;
         background-color: darken($color, 5%);
         border-color: transparent;
         color: $color-invert;
+      }
+
+      &.button--ribbon {
+
+        &:before,
+        &:after {
+          border-color: $color;
+        }
+
+        &:before {
+          border-left-color: transparent;
+        }
+
+        &:after {
+          border-right-color: transparent;
+        }
+
+        &:hover,
+        &.is-hovered,
+        &:focus,
+        &.is-focused {
+
+          &:before,
+          &:after {
+            border-color: darken($color, 2.5%);
+          }
+
+          &:before {
+            border-left-color: transparent;
+          }
+
+          &:after {
+            border-right-color: transparent;
+          }
+
+        }
+
       }
 
       &.is-loading {
