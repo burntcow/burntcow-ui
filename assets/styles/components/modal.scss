@@ -85,7 +85,7 @@ $modal-card-body-padding: 20px !default;
    ========================================================================== */
 
 .modal__close {
-  // @include delete();
+  @include delete();
   background: none;
   height: $modal-close-dimensions;
   position: fixed;

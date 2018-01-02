@@ -155,3 +155,7 @@ table {
 [hidden] {
   display: none;
 }
+
+.close {
+  @include delete($close);
+}
