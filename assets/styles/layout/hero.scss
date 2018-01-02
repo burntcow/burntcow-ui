@@ -24,6 +24,7 @@
   }
 
   &--overlay {
+
     &:after {
       content: '';
       top: 0;
@@ -43,6 +44,7 @@
     .hero__footer {
       z-index: 2;
     }
+
   }
 
   /* Hero Colors

@@ -45,22 +45,18 @@
     background-color: rgba($black, 0.05);
   }
 
-  &.is-active {
+  &.is-active span {
 
-    span {
+    &:nth-child(1) {
+      transform: translateY(5px) rotate(45deg);
+    }
 
-      &:nth-child(1) {
-        transform: translateY(5px) rotate(45deg);
-      }
+    &:nth-child(2) {
+      opacity: 0;
+    }
 
-      &:nth-child(2) {
-        opacity: 0;
-      }
-
-      &:nth-child(3) {
-        transform: translateY(-5px) rotate(-45deg);
-      }
-
+    &:nth-child(3) {
+      transform: translateY(-5px) rotate(-45deg);
     }
 
   }
