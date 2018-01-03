@@ -17,7 +17,8 @@ $nav-link-disabled-color: $grey !default;
   /* Nav Link
    ========================================================================== */
 
-  .nav-link {
+  .nav-link,
+  li {
     display: block;
     padding: $nav-link-padding-y $nav-link-padding-x;
 
@@ -40,7 +41,8 @@ $nav-link-disabled-color: $grey !default;
 
   &--fill {
 
-    .nav-item {
+    .nav-item,
+    li {
       flex: 1 1 auto;
       text-align: center;
     }
@@ -49,7 +51,8 @@ $nav-link-disabled-color: $grey !default;
 
   &--justified {
 
-    .nav-item {
+    .nav-item,
+    li {
       flex-basis: 0;
       flex-grow: 1;
       text-align: center;
@@ -59,7 +62,8 @@ $nav-link-disabled-color: $grey !default;
 
   &--seperator {
 
-    .nav-item:not(:last-child):after {
+    .nav-item:not(:last-child):after,
+    li:not(:last-child):after {
       content: '|';
       float: right;
       display: block;
