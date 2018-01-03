@@ -15,6 +15,7 @@ $subtitle-strong-color: $grey-darker !default;
 $subtitle-strong-weight: $weight-semibold !default;
 
 .title,
+.entry-title,
 .subtitle {
   @include block();
   font-family: $family-heading;
@@ -31,7 +32,8 @@ $subtitle-strong-weight: $weight-semibold !default;
 /* Title
    ========================================================================== */
 
-.title {
+.title,
+.entry-title {
   color: $title-color;
   font-size: $title-size;
   font-weight: $title-weight;
