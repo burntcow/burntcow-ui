@@ -55,8 +55,8 @@ $navbar-seperator: $white !default;
 
       .navbar__brand {
 
-        .navbar__item,
-        .navbar__item a:not(.button),
+        & > .navbar__item,
+        & > .navbar__item a:not(.button),
         .navbar__link {
           color: $color-invert;
 
@@ -82,8 +82,8 @@ $navbar-seperator: $white !default;
         .navbar__start,
         .navbar__end {
 
-          .navbar__item,
-          .navbar__item a:not(.button),
+          & > .navbar__item,
+          & > .navbar__item a:not(.button),
           .navbar__link {
             color: $color-invert;
 
@@ -92,6 +92,7 @@ $navbar-seperator: $white !default;
               background-color: darken($color, 5%);
               color: $color-invert;
             }
+
           }
 
           .navbar__link {
@@ -141,7 +142,7 @@ $navbar-seperator: $white !default;
   /* Navbar Container
      ========================================================================== */
 
-  > .container {
+  & > .container {
     align-items: stretch;
     display: flex;
     min-height: $navbar-height;
@@ -274,6 +275,10 @@ $navbar-seperator: $white !default;
   padding-right: 2.5em;
 }
 
+
+/* Navbar Dropdown
+   ========================================================================== */
+
 .navbar__dropdown {
   font-size: 0.875rem;
   padding-bottom: 0.5rem;
@@ -285,6 +290,23 @@ $navbar-seperator: $white !default;
     padding-right: 1.5rem;
   }
 
+}
+
+
+/* Navbar Content
+   ========================================================================== */
+
+.navbar__content {
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+
+/* Navbar Link
+   ========================================================================== */
+
+.navbar__link {
+  padding-right: 2.5em;
 }
 
 
