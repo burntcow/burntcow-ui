@@ -232,7 +232,7 @@ $navbar-seperator: $white !default;
   }
 
   &.navbar__item--dropdown,
-  &.navbar__item--dropdown a:not(.button) {
+  &.navbar__item--dropdown a:not(.button):not(.navbar__link) {
     padding: 0;
   }
 
