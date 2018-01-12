@@ -104,10 +104,18 @@ $navbar-seperator: $white !default;
 
         }
 
-        .navbar__item.has-dropdown:hover .navbar__link,
-        .navbar__item.has-dropdown.is-active .navbar__link {
-          background-color: darken($color, 5%);
-          color: $color-invert;
+        .navbar__item {
+
+          &--dropdown {
+
+            &:hover .navbar__link,
+            &.is-active .navbar__link {
+              background-color: darken($color, 5%);
+              color: $color-invert;
+            }
+
+          }
+
         }
 
         .navbar__dropdown {
