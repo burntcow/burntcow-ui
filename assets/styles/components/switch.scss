@@ -79,7 +79,7 @@ $switch-paddle-transition: all 0.25s ease-out !default;
   /* Switch Modifiers
    ========================================================================== */
 
-  &--outlined + label {
+  &.switch--outlined + label {
 
     &:before {
       background-color: transparent;
@@ -106,7 +106,7 @@ $switch-paddle-transition: all 0.25s ease-out !default;
 
   }
 
-  &--thin + label {
+  &.switch--thin + label {
 
     &:before {
       top: $switch-height / 2.75;
@@ -119,7 +119,7 @@ $switch-paddle-transition: all 0.25s ease-out !default;
 
   }
 
-  &--rounded + label {
+  &.switch--rounded + label {
 
     &:before {
       border-radius: $radius-large * 4;
@@ -175,15 +175,15 @@ $switch-paddle-transition: all 0.25s ease-out !default;
   /* Switch Colors
    ========================================================================== */
 
-  &--small {
+  &.switch--small {
     @include switch($size-small);
   }
 
-  &---medium {
+  &.switch---medium {
     @include switch($size-medium);
   }
 
-  &--large {
+  &.switch--large {
     @include switch($size-large);
   }
 

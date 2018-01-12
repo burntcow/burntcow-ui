@@ -140,7 +140,7 @@ $tag-delete-margin: 1px !default;
     $color: nth($pair, 1);
     $color-invert: nth($pair, 2);
 
-    &--#{$name} {
+    &.tag--#{$name} {
       background-color: $color;
       color: $color-invert;
     }
@@ -151,11 +151,11 @@ $tag-delete-margin: 1px !default;
   /* Tag Sizes
     ========================================================================== */
 
-  &--medium {
+  &.tag--medium {
     font-size: $size-normal;
   }
 
-  &--large {
+  &.tag--large {
     font-size: $size-medium;
   }
 
@@ -163,7 +163,7 @@ $tag-delete-margin: 1px !default;
   /* Tag Modifiers
     ========================================================================== */
 
-  &--delete {
+  &.tag--delete {
     margin-left: $tag-delete-margin;
     padding: 0;
     position: relative;
