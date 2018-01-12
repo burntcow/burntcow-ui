@@ -230,16 +230,19 @@ $navbar-seperator: $white !default;
     max-height: $navbar-item-img-max-height;
   }
 
-  &--dropdown {
+  &.navbar__item--dropdown,
+  &.navbar__item--dropdown a:not(.button) {
     padding: 0;
   }
 
-  &--expanded {
+  &.navbar__item--expanded,
+  &.navbar__item--expanded a:not(.button) {
     flex-grow: 1;
     flex-shrink: 1;
   }
 
-  &--tab {
+  &.navbar__item--tab,
+  &.navbar__item--tab a:not(.button) {
     border-bottom: 1px solid transparent;
     min-height: $navbar-height;
     padding-bottom: calc(0.5rem - 1px);
