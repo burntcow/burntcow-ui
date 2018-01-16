@@ -25,7 +25,20 @@
     .navbar__menu {
       background-color: transparent;
       box-shadow: 0;
+
+      .navbar__item,
+      .navbar__item a:not(.button) {
+        background-color: transparent;
+
+        &:hover,
+        &.is-active {
+          background-color: transparent;
+        }
+
+      }
+
     }
+
   }
 
   &--overlay {
