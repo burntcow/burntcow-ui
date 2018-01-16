@@ -144,6 +144,10 @@ $alignments: ('centered': 'center', 'justified': 'justify', 'left': 'left', 'rig
   font-weight: $weight-bold !important;
 }
 
+.text--italic {
+  font-style: italic !important;
+}
+
 
 /* Hidden
    ========================================================================== */

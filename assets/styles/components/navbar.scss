@@ -297,7 +297,7 @@ $navbar-seperator: $white !default;
    ========================================================================== */
 
 .navbar__link {
-  padding-right: 2.5em;
+  padding-right: 2.5em !important;
 }
 
 
@@ -334,7 +334,7 @@ $navbar-seperator: $white !default;
   }
 
   .navbar__menu {
-    background-color: $white;
+    background-color: $navbar-background-color;
     box-shadow: 0 8px 16px rgba($black, 0.1);
     padding: 0.5rem 0;
 

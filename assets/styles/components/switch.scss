@@ -22,6 +22,7 @@ $switch-paddle-transition: all 0.25s ease-out !default;
   $paddle-width: $switch-height - ($switch-paddle-offset * 2);
   $paddle-active-offest: $switch-width - $paddle-width - ($switch-paddle-offset * 1.5);
 
+
   /* Label
    ========================================================================== */
 
@@ -172,7 +173,7 @@ $switch-paddle-transition: all 0.25s ease-out !default;
   }
 
 
-  /* Switch Colors
+  /* Switch Sizes
    ========================================================================== */
 
   &.switch--small {

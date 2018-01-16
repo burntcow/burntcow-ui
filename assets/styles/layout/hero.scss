@@ -58,7 +58,7 @@
       background-color: $color;
       color: $color-invert;
 
-      a:not(.button),
+      a:not(.button):not(.navbar__item--dropdown):not(.tag),
       strong {
         color: inherit;
       }

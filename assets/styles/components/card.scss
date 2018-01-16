@@ -18,6 +18,50 @@ $card-footer-border-top: 1px solid $border !default;
   color: $card-color;
   max-width: 100%;
   position: relative;
+
+  .media:not(:last-child) {
+    margin-bottom: 0.75rem;
+  }
+
+
+  /* Card Modifiers
+   ========================================================================== */
+
+  &--horizontal {
+    flex-direction: row;
+    display: flex;
+    flex-basis: 50ex;
+    flex-grow: 0;
+    flex-shrink: 1;
+
+    .card__image {
+      flex: 2;
+      flex-shrink: 2;
+
+      .image {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+
+        img {
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+
+      }
+
+    }
+
+    .card-content {
+      flex: 3;
+      flex-shrink: 3;
+    }
+
+  }
+
 }
 
 
@@ -41,6 +85,10 @@ $card-footer-border-top: 1px solid $border !default;
   flex-grow: 1;
   font-weight: $card-header-weight;
   padding: 0.75rem;
+
+
+  /* Card Title Modifiers
+   ========================================================================== */
 
   &--centered {
     justify-content: center;
