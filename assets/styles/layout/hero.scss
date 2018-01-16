@@ -21,6 +21,11 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
+    .navbar__menu {
+      background-color: transparent;
+      box-shadow: 0;
+    }
   }
 
   &--overlay {
@@ -58,7 +63,7 @@
       background-color: $color;
       color: $color-invert;
 
-      a:not(.button):not(.navbar__item--dropdown):not(.tag),
+      a:not(.button):not(.tag),
       strong {
         color: inherit;
       }
@@ -71,7 +76,7 @@
       .subtitle {
         color: rgba($color-invert, 0.9);
 
-        a:not(.button),
+        a:not(.button):not(.tag),
         strong {
           color: $color-invert;
         }
@@ -86,7 +91,6 @@
 
       }
 
-      .navbar__item,
       .navbar__item a:not(.button),
       .navbar__link {
         color: rgba($color-invert, 0.7);
@@ -95,6 +99,29 @@
         &.is-active {
           background-color: darken($color, 5%);
           color: $color-invert;
+        }
+
+      }
+
+      .navbar__link {
+
+        &:after {
+          border-color: $color-invert;
+        }
+
+      }
+
+      .navbar__dropdown {
+
+        .navbar__item,
+        .navbar__item a {
+          color: $color;
+
+          &:hover,
+          &.is-active {
+            color: darken($color, 5%);
+          }
+
         }
 
       }

@@ -107,10 +107,10 @@ $navbar-seperator: $white !default;
 
         .navbar__item {
 
-          &--dropdown {
+          &.has-dropdown:hover,
+          &.has-dropdown.is-active {
 
-            &:hover .navbar__link,
-            &.is-active .navbar__link {
+            .navbar__link {
               background-color: darken($color, 5%);
               color: $color-invert;
             }
@@ -121,6 +121,7 @@ $navbar-seperator: $white !default;
 
         .navbar__dropdown {
 
+          .navbar__item,
           .navbar__item a:not(.button) {
 
             &.is-active {
@@ -169,15 +170,31 @@ $navbar-seperator: $white !default;
       left: 0;
     }
 
+    .navbar__dropdown {
+      margin-top: -2px;
+    }
+
   }
 
 }
 
 
-/* Navbar Brand
+/* Navbar Brand / Tabs
    ========================================================================== */
 
-.navbar__brand {
+.navbar__brand,
+.navbar__tabs {
+  align-items: stretch;
+  display: flex;
+  flex-shrink: 0;
+  min-height: $navbar-height;
+}
+
+
+/* Navbar Tabs
+   ========================================================================== */
+
+.navbar__tabs {
   align-items: stretch;
   display: flex;
   flex-shrink: 0;
