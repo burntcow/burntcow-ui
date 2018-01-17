@@ -405,6 +405,7 @@ $navbar-seperator: $white !default;
       .navbar__dropdown {
 
         .navbar__item {
+          color: $navbar-item-color;
 
           &:hover {
             background-color: $navbar-dropdown-item-hover-background-color;
