@@ -2,11 +2,15 @@
    #FIGURE
    ========================================================================== */
 
+$figure-spacing: 1em;
+$figure-content-alignment: center;
+
 .figure {
   max-width: 100%;
 
   .figure__content {
-    text-align: center;
+    margin-top: $figure-spacing;
+    text-align: $figure-content-alignment;
   }
 
 }

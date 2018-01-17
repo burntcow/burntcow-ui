@@ -104,11 +104,13 @@
   flex-shrink: 0;
 
   .level-item {
+
     &.level--flexible {
       flex-grow: 1;
     }
 
     @include tablet() {
+
       &:not(:last-child) {
         margin-right: 0.75rem;
       }
@@ -128,14 +130,17 @@
   justify-content: flex-start;
 
   @include mobile() {
+
     & + .level__right {
       margin-top: 1.5rem;
     }
+
   }
 
   @include tablet() {
     display: flex;
   }
+
 }
 
 
