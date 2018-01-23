@@ -11,3 +11,6 @@ node_modules
 # Debug
 npm-debug.log
 yarn-error.log
+
+# Visual Studio Code
+.vscode
