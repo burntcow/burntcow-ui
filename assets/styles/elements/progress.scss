@@ -21,14 +21,20 @@ $progress-value-background-color: $text !default;
   padding: 0;
   width: 100%;
 
-  &::-webkit-progress-bar,
-  &::-webkit-progress-value,
-  &::-moz-progress-bar,
-  &::-ms-fill {
+  &::-webkit-progress-bar {
+    background-color: $progress-bar-background-color;
+  }
+
+  &::-webkit-progress-value {
+    background-color: $progress-bar-background-color;
+  }
+
+  &::-moz-progress-bar {
     background-color: $progress-bar-background-color;
   }
 
   &::-ms-fill {
+    background-color: $progress-bar-background-color;
     border: none;
   }
 
@@ -41,9 +47,14 @@ $progress-value-background-color: $text !default;
 
     &--#{$name} {
 
-      &::-webkit-progress-bar,
-      &::-webkit-progress-value,
-      &::-moz-progress-bar,
+      &::-webkit-progress-value {
+        background-color: $color;
+      }
+
+      &::-moz-progress-bar {
+        background-color: $color;
+      }
+
       &::-ms-fill {
         background-color: $color;
       }
