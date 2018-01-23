@@ -1,0 +1,100 @@
+/* ==========================================================================
+   #MENU
+   ========================================================================== */
+
+$menu-item-color: $text !default;
+$menu-item-radius: $radius-small !default;
+$menu-item-hover-color: $link-invert !default;
+$menu-item-hover-background-color: $link !default;
+$menu-item-active-color: $link-invert !default;
+$menu-item-active-background-color: $link !default;
+
+$menu-list-border-left: 1px solid $border !default;
+
+$menu-label-color: $text-light !default;
+
+.menu {
+  font-size: $size-normal;
+
+
+  /* Menu Sizes
+  ========================================================================== */
+
+  &--small {
+    font-size: $size-small;
+  }
+
+  &--medium {
+    font-size: $size-medium;
+  }
+
+  &--large {
+    font-size: $size-large;
+  }
+
+}
+
+
+/* Menu List
+========================================================================== */
+
+.menu__list {
+  line-height: 1.25;
+
+
+  /* Menu Links
+  ========================================================================== */
+
+  a {
+    border-radius: $menu-item-radius;
+    color: $menu-item-color;
+    display: block;
+    padding: 0.5em 0.75em;
+
+
+    /* Menu Link Modifiers
+    ========================================================================== */
+
+    &:hover {
+      background-color: $menu-item-hover-background-color;
+      color: $menu-item-hover-color;
+    }
+
+    &.is-active {
+      background-color: $menu-item-active-background-color;
+      color: $menu-item-active-color;
+    }
+
+  }
+
+
+  /* Nested Menu Items
+  ========================================================================== */
+
+  li ul {
+    border-left: $menu-list-border-left;
+    margin: 0.75em;
+    padding-left: 0.75em;
+  }
+
+}
+
+
+/* Menu Label
+========================================================================== */
+
+.menu__label {
+  color: $menu-label-color;
+  font-size: 0.75em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  &:not(:first-child) {
+    margin-top: 1em;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 1em;
+  }
+
+}
