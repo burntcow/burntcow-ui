@@ -44,6 +44,19 @@
 }
 
 
+/* Background Colors
+   ========================================================================== */
+
+@each $name, $pair in $colors {
+  $color: nth($pair, 1);
+
+  .bg--#{$name} {
+    background-color: $color !important;
+  }
+
+}
+
+
 /* Text Alignment
    ========================================================================== */
 
