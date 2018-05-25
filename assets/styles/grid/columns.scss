@@ -892,17 +892,17 @@ $column-gap: 0.75rem !default;
   margin-left: calc(-1 * var(--columnGap));
   margin-right: calc(-1 * var(--columnGap));
 
-  .column {
-    padding-left: var(--columnGap);
-    padding-right: var(--columnGap);
-  }
-
   @for $i from 0 through 8 {
 
-    .columns--#{$i} {
+    &.columns--#{$i} {
       --columnGap: $i * 0.25rem;
     }
 
+  }
+
+  .column {
+    padding-left: var(--columnGap);
+    padding-right: var(--columnGap);
   }
 
 }
